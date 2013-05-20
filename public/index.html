@@ -3,11 +3,113 @@
 
 <head>
   <meta charset="utf-8">
-  <title>My Amazing Fat Client</title>
+  <title>My Amazing Fat Client Portfolio Builder</title>
   <link rel="stylesheet" href="../app/assets/stylesheets/application.css">
 </head>
 
 <body>
+
+  <section id="navigation">
+  </section>
+
+  <section id="content">
+
+    <div id="bio">
+      <img src="uploads/me.jpg" width="200" height="200" alt="Dan Garland"
+      class="bio-image shadowed" />
+
+      <div class="bio-text">
+        <h1 class="name">Dan Garland</h1>
+
+        <h2 class="bio">
+          Freelance Ruby on Rails developer from London, UK
+        </h2>
+
+        <h3 class="mission">
+          Expressing creativity through innovative web development
+        </h3>
+      </div>
+    </div>
+
+    <div id="projects">
+      <h2>Recent Project Work</h2>
+      <div class="project">
+        <div class="sortable">
+        </div>
+
+        <div class="info">
+          <img src="uploads/project.jpg" width="350" height="165"
+          alt="My Amazing Project" class="project-image shadowed" />
+
+          <div class="project-details">
+            <h3 class="project-name">
+              Bucketlist
+            </h3>
+
+            <a href="https://github.com/dmgarland/BucketListApp">
+              https://github.com/dmgarland/BucketListApp
+            </a>
+
+            <div class="skills">
+              <span class="skill-label">
+                Skills:
+              </span>
+
+              <ul class="skill-list">
+                <li class="skill">
+                  <span class="name">Ruby</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">Rails</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">AJAX</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">HTML 5</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">CSS</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">Javascript</span>
+                  <span class="delete">Remove</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="body">
+              <p>I worked on a Rails application that created a todo list of
+                things I want to do before I die.</p>
+
+              <ul>
+                <li>I integrated Google maps and used Geocoding to determine
+                  where my activities would take place.</li>
+                <li>I used AJAX to asynchronously update markers on the map when
+                 the center changed.</li>
+                <li>I displayed crime statistics on a chart using an API call
+                  and Morris.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="remove-project">
+          Remove Project
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </section>
+
+  <section id="footer">
+  </section>
 
   <!-- Load application scripts at the end of the body, so that we
   don't slow up the loading time of the DOM -->

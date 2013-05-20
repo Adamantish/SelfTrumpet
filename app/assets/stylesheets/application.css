@@ -1,0 +1,174 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  background: #99CCFF;
+  background-image: linear-gradient(top, #99CCFF 0%, #6699CC 400px);
+  background-image: -o-linear-gradient(top, #99CCFF 0%, #6699CC 400px);
+  background-image: -moz-linear-gradient(top, #99CCFF 0%, #6699CC 400px);
+  background-image: -webkit-linear-gradient(top, #99CCFF 0%, #6699CC 400px);
+  background-image: -ms-linear-gradient(top, #99CCFF 0%, #6699CC 400px);
+  color : #313131;
+  height: 100%;
+}
+
+body {
+  padding: 20px;
+}
+
+#content {
+  width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 2px 2px 14px #6699CC;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+
+h1.name {
+  /*font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;*/
+  font-size: 4em;
+  text-shadow: 2px 1px 1px #999;
+  margin-bottom: 0.25em;
+}
+
+h2.bio {
+  margin-bottom: 1em;
+}
+
+h3.mission {
+  letter-spacing: 0.1em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#bio {
+  height: 200px;
+}
+
+.bio-image {
+  float: left;
+}
+
+.bio-text {
+  margin-left: 220px;
+  position: relative;
+  top: -12px;
+}
+
+.shadowed {
+  border-radius: 6px;
+  box-shadow: 1px 2px 6px #999999;
+}
+
+#projects {
+  margin-top: 50px;
+  clear: left;
+}
+
+.project {
+  margin-top: 20px;
+
+}
+
+.project .sortable {
+  background-image: url(../images/sort-arrows.png);
+  width: 20px;
+  height: 35px;
+  cursor: move;
+  float:left;
+  position: relative;
+  top: 60px;
+}
+
+.project .info {
+  margin-left: 20px;
+  width: 820px;
+  float: left;
+}
+
+.project-image {
+  float: left;
+  margin-right: 20px;
+}
+
+.project-details {
+
+}
+
+.skills {
+  font-size: 12px;
+  height: 60px;
+}
+
+ul.skill-list li {
+  float: left;
+}
+
+.skill {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  float: left;
+  margin-bottom: 4px;
+  margin-right: 6px;
+  background-color: white;
+  height: 18px;
+  border-radius: 14px;
+  border: 1px #DFCBDB solid;
+  padding: 5px 4px 1px 11px;
+}
+
+.project .body {
+  margin-left: 370px;
+}
+
+.project .body ul {
+  list-style-type: square;
+  padding-left: 20px;
+
+}
+
+.skill-label {
+  float: left;
+  line-height: 30px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.skill .name {
+  float: left;
+}
+
+.skill .delete {
+  display: inline-block;
+  text-indent: -9999px;
+  background: transparent url("../images/remove-button.png") no-repeat 0px 0px;
+  width: 17px;
+  height: 17px;
+  cursor:pointer;
+  margin-left: 8px;
+  position: relative;
+  top: -1px;
+  float:right;
+}
+
+.remove-project {
+  width: 27px;
+  height: 27px;
+  text-indent: -9999px;
+  background: transparent url("../images/delete-icons.png") no-repeat;
+  cursor: pointer;
+  margin-left: 870px;
+}
+
+.clear {
+  clear: both;
+}
