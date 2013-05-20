@@ -75,7 +75,7 @@ ul {
 
 .project {
   margin-top: 20px;
-
+  clear: left;
 }
 
 .project .sortable {
@@ -158,6 +158,15 @@ ul.skill-list li {
   position: relative;
   top: -1px;
   float:right;
+}
+
+.add-skill {
+  background: transparent url("../images/add-button.png");
+  text-indent: -9999px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 .remove-project {
