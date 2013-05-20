@@ -7,8 +7,7 @@ an on-line portfolio to show off our project work.
 
 * Fork and clone this repo as per usual.
 * Open in your favourite browser, using a scheme such as
-
-```file:///Users/yournamehere/projects/backbone_portfolio/public/index.html```
+file:///Users/yournamehere/projects/backbone_portfolio/public/index.html
 
 Note that there is no rails server!
 
@@ -16,7 +15,7 @@ Note that there is no rails server!
 
 To run the tests, visit the jasmine script runner in your browser:
 
-```file:///Users/yournamehere/projects/backbone_portfolio/SpecRunner.html```
+    file:///Users/yournamehere/projects/backbone_portfolio/SpecRunner.html
 
 
 ## TODO
