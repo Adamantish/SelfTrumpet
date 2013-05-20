@@ -178,6 +178,10 @@ ul.skill-list li {
   margin-left: 870px;
 }
 
+.hidden-edit {
+  display: none;
+}
+
 .clear {
   clear: both;
 }
