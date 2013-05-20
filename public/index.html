@@ -38,73 +38,6 @@
       </div>
 
       <script type="text/template" id="project-template">
-        <div class="project">
-          <div class="sortable">
-          </div>
-
-          <div class="info">
-            <img src="uploads/project.jpg" width="350" height="165"
-            alt="My Amazing Project" class="project-image shadowed" />
-
-            <div class="project-details">
-              <h3 class="project-name">
-                <%= title %>
-              </h3>
-
-              <input class="edit-title hidden-edit" placeholder="Enter a title">
-
-              <a href="<%= url %>">
-                <%= url %>
-              </a>
-
-              <div class="skills">
-                <span class="skill-label">
-                  Skills:
-                </span>
-
-                <ul class="skill-list">
-                  <li class="skill">
-                    <span class="name">Ruby</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">Rails</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">AJAX</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">HTML 5</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">CSS</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                  <li class="skill">
-                    <span class="name">Javascript</span>
-                    <span class="delete">Remove</span>
-                  </li>
-                </ul>
-
-                <span class="add-skill">Add Skill</span>
-              </div>
-
-              <div class="body">
-                <%= body %>
-              </div>
-            </div>
-          </div>
-
-          <div class="remove-project">
-            Remove Project
-          </div>
-        </div>
-      </script>
-
-      <div class="new-project">
         <div class="sortable">
         </div>
 
@@ -114,11 +47,13 @@
 
           <div class="project-details">
             <h3 class="project-name">
-              New Project
+              <%= title %>
             </h3>
 
-            <a href="#">
-              Project URL
+            <input class="edit-title hidden-edit" placeholder="Enter a title">
+
+            <a href="<%= url %>">
+              <%= url %>
             </a>
 
             <div class="skills">
@@ -127,13 +62,37 @@
               </span>
 
               <ul class="skill-list">
+                <li class="skill">
+                  <span class="name">Ruby</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">Rails</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">AJAX</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">HTML 5</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">CSS</span>
+                  <span class="delete">Remove</span>
+                </li>
+                <li class="skill">
+                  <span class="name">Javascript</span>
+                  <span class="delete">Remove</span>
+                </li>
               </ul>
 
               <span class="add-skill">Add Skill</span>
             </div>
 
             <div class="body">
-              <p>Click here to add a project description</p>
+              <%= body %>
             </div>
           </div>
         </div>
@@ -141,7 +100,8 @@
         <div class="remove-project">
           Remove Project
         </div>
-      </div>
+
+      </script>
 
       <div class="clear"></div>
     </div>
