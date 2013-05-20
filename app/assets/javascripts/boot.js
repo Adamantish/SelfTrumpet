@@ -3,5 +3,6 @@
 // An object to group all of the Backbone objects together
 var app = app || {
   models: {},
-  views: {}
+  views: {},
+  collections: {}
 };

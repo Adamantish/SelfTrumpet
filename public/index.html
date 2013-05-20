@@ -33,80 +33,76 @@
 
     <div id="projects">
       <h2>Recent Project Work</h2>
-      <div class="project">
-        <div class="sortable">
-        </div>
 
-        <div class="info">
-          <img src="uploads/project.jpg" width="350" height="165"
-          alt="My Amazing Project" class="project-image shadowed" />
-
-          <div class="project-details">
-            <h3 class="project-name">
-              Bucketlist
-            </h3>
-
-            <a href="https://github.com/dmgarland/BucketListApp">
-              https://github.com/dmgarland/BucketListApp
-            </a>
-
-            <div class="skills">
-              <span class="skill-label">
-                Skills:
-              </span>
-
-              <ul class="skill-list">
-                <li class="skill">
-                  <span class="name">Ruby</span>
-                  <span class="delete">Remove</span>
-                </li>
-                <li class="skill">
-                  <span class="name">Rails</span>
-                  <span class="delete">Remove</span>
-                </li>
-                <li class="skill">
-                  <span class="name">AJAX</span>
-                  <span class="delete">Remove</span>
-                </li>
-                <li class="skill">
-                  <span class="name">HTML 5</span>
-                  <span class="delete">Remove</span>
-                </li>
-                <li class="skill">
-                  <span class="name">CSS</span>
-                  <span class="delete">Remove</span>
-                </li>
-                <li class="skill">
-                  <span class="name">Javascript</span>
-                  <span class="delete">Remove</span>
-                </li>
-              </ul>
-
-              <span class="add-skill">Add Skill</span>
-            </div>
-
-            <div class="body">
-              <p>I worked on a Rails application that created a todo list of
-                things I want to do before I die.</p>
-
-              <ul>
-                <li>I integrated Google maps and used Geocoding to determine
-                  where my activities would take place.</li>
-                <li>I used AJAX to asynchronously update markers on the map when
-                 the center changed.</li>
-                <li>I displayed crime statistics on a chart using an API call
-                  and Morris.js</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="remove-project">
-          Remove Project
-        </div>
+      <div id="project-list">
       </div>
 
-      <div class="project">
+      <script type="text/template" id="project-template">
+        <div class="project">
+          <div class="sortable">
+          </div>
+
+          <div class="info">
+            <img src="uploads/project.jpg" width="350" height="165"
+            alt="My Amazing Project" class="project-image shadowed" />
+
+            <div class="project-details">
+              <h3 class="project-name">
+                <%= title %>
+              </h3>
+
+              <a href="<%= url %>">
+                <%= url %>
+              </a>
+
+              <div class="skills">
+                <span class="skill-label">
+                  Skills:
+                </span>
+
+                <ul class="skill-list">
+                  <li class="skill">
+                    <span class="name">Ruby</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">Rails</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">AJAX</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">HTML 5</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">CSS</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                  <li class="skill">
+                    <span class="name">Javascript</span>
+                    <span class="delete">Remove</span>
+                  </li>
+                </ul>
+
+                <span class="add-skill">Add Skill</span>
+              </div>
+
+              <div class="body">
+                <%= body %>
+              </div>
+            </div>
+          </div>
+
+          <div class="remove-project">
+            Remove Project
+          </div>
+        </div>
+      </script>
+
+      <div class="new-project">
         <div class="sortable">
         </div>
 
@@ -159,15 +155,9 @@
   <script src="../app/assets/javascripts/backbone-min.js"></script>
   <script src="../app/assets/javascripts/backbone.localStorage-min.js"></script>
   <script src="../app/assets/javascripts/boot.js"></script>
-  <!--
-  <script src="../app/assets/javascripts/models/todo.js"></script>
-  <script src="../app/assets/javascripts/collections/todos.js"></script>
-  <script src="../app/assets/javascripts/views/todos.js"></script>
-  <script src="../app/assets/javascripts/views/app.js"></script>
-  <script src="../app/assets/javascripts/routers/router.js"></script>
-  -->
   <script src="../app/assets/javascripts/models/project.js"></script>
-  <script src="../app/assets/javascripts/views/project.js"></script>
+  <script src="../app/assets/javascripts/collections/project_list.js"></script>
+  <script src="../app/assets/javascripts/views/project_view.js"></script>
   <script src="../app/assets/javascripts/application.js"></script>
 </body>
 
