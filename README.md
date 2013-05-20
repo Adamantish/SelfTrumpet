@@ -12,6 +12,13 @@ an on-line portfolio to show off our project work.
 
 Note that there is no rails server!
 
+## TESTS
+
+To run the tests, visit the jasmine script runner in your browser:
+
+```file:///Users/yournamehere/projects/backbone_portfolio/SpecRunner.html```
+
+
 ## TODO
 
 * Create a User model that represents yourself.
