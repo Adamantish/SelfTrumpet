@@ -2,22 +2,14 @@ app.models.Project = Backbone.Model.extend({
 
   localStorage: new Backbone.LocalStorage('portfolio'),
 
-  initialize: function() {
-    this.bind("change", this.updateTitle);
-  },
-
-  // updateTitle: function() {
-  //   this.attributes.title += " Changed";
-  // },
-
   validate: function() {
     if(this.attributes.url === "") {
-      return "Argh!";
-    }
+      return "URL can't be blank";
+    };
 
-    if(this.attributes.title == "") {
-      return false;
-    }
+    if(this.attributes.title === "") {
+      return "Title can't be blank";
+    };
   }
 
 });

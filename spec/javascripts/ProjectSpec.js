@@ -31,19 +31,6 @@ describe("A Project", function() {
     });
   });
 
-  describe("Setting an attribute", function() {
-    beforeEach(function() {
-      project.set({
-        "title" : "Cool Beans"
-      });
-    });
-
-    it("Should update the title", function() {
-      expect(project.get("title")).toEqual("Cool Beans Changed");
-    });
-
-  });
-
   describe("validation", function() {
     beforeEach(function() {
       project = new app.models.Project({
