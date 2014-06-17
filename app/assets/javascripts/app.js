@@ -19,7 +19,7 @@ $(document).ready(function() {
     body: "Click to edit"
   });
 
-  projectList.forEach(function(project) {
+  projectList.each(function(project) {
     var view = new app.views.ProjectView({ model: project });
     $('#project-list').append(view.render().el);
   });
