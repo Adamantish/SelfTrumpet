@@ -21,7 +21,7 @@ To run the tests, visit the jasmine script runner in your browser:
 ## TODO
 
 * Create a User model that represents yourself.
-  * Create keys for name, bio, image URL and mission.
+* Create keys for name, bio, image URL and mission.
 * Add validation for the model and test that it works using Jasmine TDD
 * Instantiate your user in the application.js
 * Update the index.html to include the bio section in a script tag, and create a User view that replaces the values with the information in your model.
