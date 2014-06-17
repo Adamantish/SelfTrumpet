@@ -5,11 +5,12 @@ app.views.ProjectView = Backbone.View.extend({
   template: _.template($('#project-template').html()),
   events: {
     'dblclick .project-name': 'editProjectName',
-    'keypress .edit-title': 'updateTitle'
+    'change .edit-title': 'updateTitle'
   },
 
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
+    this.listenTo(this.model, "change", this.render);
     return this;
   },
 
@@ -18,14 +19,9 @@ app.views.ProjectView = Backbone.View.extend({
     this.$el.find('.edit-title').show().focus().prev('h3').hide();
   },
 
-  updateTitle: function() {
-    var new_title = this.$el.find('.edit-title').val().trim();
-    if(event.which !== 13 || !new_title) {
-      return;
-    }
-
+  updateTitle: function(e) {
+    var new_title = $(e.currentTarget).val().trim();
     this.model.set('title', new_title);
     this.model.save();
-    this.$el.find('.edit-title').val('').hide().prev('h3').show().html(new_title);
   }
 });
