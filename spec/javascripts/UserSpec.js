@@ -1,4 +1,4 @@
-describe("User", function() {
+describe("User model", function() {
   
   beforeEach(function(){
     adam = new User({
@@ -26,5 +26,6 @@ describe("User", function() {
     expect(nameless.isValid()).toEqual(true)
   });
 
-  it("allows")
+
 });
+
