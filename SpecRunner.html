@@ -15,11 +15,96 @@
   <script src="app/assets/javascripts/libs/backbone.js"></script>
   <script src="app/assets/javascripts/libs/backbone.localStorage-min.js"></script>
 
+  <script type="text/template" id="project-template">
+  <div class="sortable">
+  </div>
+
+  <div class="info">
+    <img src="uploads/project.jpg" width="350" height="165"
+    alt="My Amazing Project" class="project-image shadowed" />
+
+    <div class="project-details">
+      <h3 class="project-name">
+        <%= title %>
+      </h3>
+
+      <input class="edit-title hidden-edit" placeholder="Enter a title">
+
+      <a href="<%= url %>">
+        <%= url %>
+      </a>
+
+      <div class="skills">
+        <span class="skill-label">
+          Skills:
+        </span>
+
+        <ul class="skill-list">
+          <li class="skill">
+            <span class="skill-name">Ruby</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">Rails</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">AJAX</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">HTML 5</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">CSS</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">Javascript</span>
+            <span class="delete">Remove</span>
+          </li>
+        </ul>
+
+        <span class="add-skill">Add Skill</span>
+      </div>
+
+      <div class="body">
+        <%= body %>
+      </div>
+    </div>
+  </div>
+
+  <div class="remove-project">
+    Remove Project
+  </div>
+
+</script>
+
+<script type="text/template" id="user-template">
+<img src=<%= image_url %> width="200" height="200" alt="<%= name %>"
+class="image_url bio-image shadowed editable" />
+
+<div class="bio-text">
+  <h1 class="name editable"><%= name %></h1>
+
+  <h2 class="bio editable">
+    <%= bio %>
+  </h2>
+
+  <h3 class="mission editable">
+    <%= mission %>
+  </h3>
+</div>
+</script>
   <script type="text/javascript" src="app/assets/javascripts/app.js"></script>
 
+  <script type="text/javascript" src="app/assets/javascripts/libs/editable.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/models/user.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/views/userView.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/models/project.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/collections/project_list.js"></script>
+
   <script type="text/javascript" src="app/assets/javascripts/views/project_view.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/boot.js"></script>
 
@@ -27,6 +112,7 @@
   <script type="text/javascript" src="spec/javascripts/SpecHelper.js"></script>
   <script type="text/javascript" src="spec/javascripts/ProjectSpec.js"></script>
   <script type="text/javascript" src="spec/javascripts/UserSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/UserViewSpec.js"></script>
 
   <script type="text/javascript">
     (function() {

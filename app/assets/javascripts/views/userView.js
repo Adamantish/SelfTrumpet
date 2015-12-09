@@ -2,6 +2,7 @@ app.views.UserView = Backbone.View.extend({
 
   tagName: 'div',
   className: "container__bio",
+  id: "user",
   template: _.template($('#user-template').html()),
   events: {
     'dblclick .editable': 'toggleVisible',
@@ -21,7 +22,6 @@ app.views.UserView = Backbone.View.extend({
   toggleVisible: function(e){
     $(e.currentTarget).parent().children().toggle()
   },
-
 
   updateElement: function(e){
     var $el = $(e.currentTarget)
