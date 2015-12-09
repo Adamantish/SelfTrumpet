@@ -1,7 +1,7 @@
 
 var Editable = function(){};
 
-var template = _.template("<input class='<%= field %> edit-me hidden' value='<%= value %>'>")
+var template = _.template("<input data-attributes='<%= field %>' class='<%= field %> edit-me hidden' value='<%= value %>'>")
 
 Editable.prototype.makeInputBoxes = function($el, model) {
   _.each(model.attributes, function(value, field) {
