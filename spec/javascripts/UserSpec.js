@@ -1,7 +1,7 @@
 describe("User model", function() {
   
   beforeEach(function(){
-    adam = new User({
+    adam = new app.models.User({
       name: "Adam",
       bio: "(In production)",
       image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
@@ -14,7 +14,7 @@ describe("User model", function() {
   });
 
   it("validates against a user with no name and bio",function() {
-    nameless = new User();
+    nameless = new app.models.User();
     expect(nameless.isValid()).toBeFalsy()
     var messages = nameless.validationError.full_messages
     expect(_.indexOf(messages, "The Man/Woman/Transgender With No Name")).toNotEqual(-1)
@@ -26,6 +26,27 @@ describe("User model", function() {
     expect(nameless.isValid()).toEqual(true)
   });
 
+  it("has a cid but not an id", function(){
+    expect(adam.cid).toBeDefined();
+    expect(adam.id).toBeUndefined();
+  });
+
+  describe("when persisted", function() {
+    beforeEach(function(){
+      adam.save();
+    });
+
+    afterEach(function(){
+      localStorage.clear();
+    });
+
+    it("has a cid but not an id", function(){
+      expect(adam.cid).toBeDefined();
+      expect(adam.id).toBeDefined();
+    });
+
+
+  })
 
 });
 

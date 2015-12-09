@@ -9,6 +9,7 @@ Editable.prototype.makeInputBoxes = function(view) {
   var model = view.model
 
   _.each(model.attributes, function(value, field) {
+    debugger;
     var anchor = $el.find("." + field + ".editable");
     var editBox = template({ field: field, value: value });
 

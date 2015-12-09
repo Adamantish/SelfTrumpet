@@ -1,7 +1,15 @@
 
-User = Backbone.Model.extend({
+app.models.User = Backbone.Model.extend({
 
-  localStorage: new Backbone.LocalStorage('portfolio'),
+  defaults: {
+    image_url: "assets/images/yourface.png",
+    firstName: "First Name",
+    lastName: "Last Name",
+    bio: "Biography",
+    firstName: "First Name",
+  },
+  
+  localStorage: new Backbone.LocalStorage('user'),
 
   validate: function(attributes){    
     var errors = {

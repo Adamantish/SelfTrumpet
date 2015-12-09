@@ -38,10 +38,12 @@ h1,h2,h3,h4,h5 {
   margin-bottom: 0.25em;
 }*/
 
+h1 { margin-bottom: 0.25em;}
 h1 * {
   font-size: 2rem;
   text-shadow: 2px 1px 1px #999;
   margin-bottom: 0.25em;
+  display: inline-block;
 }
 
 .bio {

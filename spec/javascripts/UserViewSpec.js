@@ -4,7 +4,7 @@ describe("User View", function () {
   var adam;
 
   beforeEach(function(){
-    adam = new User({
+    adam = new app.models.User({
       name: "Adam",
       firstName: "Adam",
       lastName: "Misrahi",
@@ -39,7 +39,7 @@ describe("User View", function () {
     });
 
     it("should display the user's name", function(){
-      debugger;
+      
       expect(view.$el.find("h1").html()).toMatch(/Adam/)
     });
 
