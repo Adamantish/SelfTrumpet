@@ -9,6 +9,8 @@ $(document).ready(function() {
 
   var adam = new User({
     name: "Adam",
+    firstName: "Adam",
+    lastName: "Misrahi",
     bio: "(In production)",
     image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
     mission: "To LIDL and beyond" 

@@ -13,13 +13,14 @@ app.views.UserView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.model.toJSON()));
-    this.$el = $(editable.makeInputBoxes(this.$el, this.model))
+    this.$el = $(editable.makeInputBoxes(this))
     this.listenTo(this.model, "blur", this.render);
     this.listenTo(this.model, "change", this.render);
     return this;
   },
 
   toggleVisible: function(e){
+    debugger;
     $(e.currentTarget).parent().children().toggle()
   },
 
