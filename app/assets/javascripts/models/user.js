@@ -1,6 +1,8 @@
 
 User = Backbone.Model.extend({
 
+  localStorage: new Backbone.LocalStorage('portfolio'),
+
   validate: function(attributes){    
     var errors = {
       full_messages: []
