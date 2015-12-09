@@ -26,7 +26,7 @@ app.views.UserView = Backbone.View.extend({
 
   updateElement: function(e){
     var $el = $(e.currentTarget)
-    var field = $el.attr("data-attributes")
+    var field = $el.data("attributes")
     var newVal = $(e.currentTarget).val().trim();
     this.model.set(field, $el.val().trim());
     this.model.save();

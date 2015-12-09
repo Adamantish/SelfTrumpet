@@ -12,9 +12,10 @@ Editable.prototype.makeInputBoxes = function(view) {
     var anchor = $el.find("." + field + ".editable");
     var editBox = template({ field: field, value: value });
 
-    // In two minds about this wrapping element. 
+    // In two minds about this wrapping element.
     // It's only handy for toggling hidden class of the things inside.
-    anchor.wrap("<div class='container__edit'></div>")
+    // UPDATE: yeah it was a bad idea. Sometimes the container needs display: inline other times not
+    // anchor.wrap("<div class='container__edit' style='display:inline-block;'></div>")
     anchor.after(editBox);
   })
 

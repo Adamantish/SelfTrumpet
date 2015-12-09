@@ -15,23 +15,25 @@
   <section id="content">
 
     <div id="backbone__user"></div>
-    <script type="text/template" id="user-template">
-      <img src=<%= image_url %> width="200" height="200" alt="<%= name %>"
-      class="image_url bio-image shadowed editable" />
+      <script type="text/template" id="user-template">
+        <img src=<%= image_url %> width="200" height="200" alt="<%= name %>"
+        class="image_url bio-image shadowed editable" />
 
-      <div class="bio-text">
-        <h1 class="name editable"><%= name %></h1>
+        <div class="bio-text">
+          <h1>
+            <span class="firstName editable"><%= firstName %></span>
+            <span class="lastName editable"><%= lastName %></span>
+          </h1>
 
-        <h2 class="bio editable">
-          <%= bio %>
-        </h2>
+          <h2 class="bio editable">
+            <%= bio %>
+          </h2>
 
-        <h3 class="mission editable">
-          <%= mission %>
-        </h3>
-      </div>
-    </script>
-
+          <h3 class="mission editable">
+            <%= mission %>
+          </h3>
+        </div>
+      </script>
     <!-- TODO: Get these into user template -->
     <div id="projects">
       <h2>Recent Project Work</h2>
