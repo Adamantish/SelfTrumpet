@@ -183,6 +183,10 @@ ul.skill-list li {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .clear {
   clear: both;
 }

@@ -1,5 +1,3 @@
-    adam
-
 
 User = Backbone.Model.extend({
 

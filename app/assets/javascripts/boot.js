@@ -23,9 +23,12 @@ $(document).ready(function() {
     });
   }
   // Put in the me dummy
-  adam
+  
   var view = new app.views.UserView({ model: adam })
-  $('#backbone__user').append(view.render().el)
+  var $viewEl = $(view.render().el)
+  debugger;
+  $viewEl = editable.makeInputBoxes( $viewEl, view.model)
+  $('#backbone__user').append($viewEl)
 
   // Create a blank project for us to fill in.
   projectList.add({
