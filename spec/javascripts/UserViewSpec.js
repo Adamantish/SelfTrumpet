@@ -1,4 +1,5 @@
 describe("User View", function () {
+
   var View;
   var adam;
 
@@ -61,39 +62,78 @@ describe("User View", function () {
       $('#fixtures').html('');
     });
 
-    describe("editing firstName", function(){
-      
-      var firstNameEdit;
-      var rendered;
-
-      beforeEach(function(){
-        rendered = view.render()
-        firstNameEdit = rendered.$el.find('.editable.firstName')
-        firstNameEdit.trigger('dblclick');
-      });
-
-      it("displays an input field", function(){
-        debugger;
-        expect(firstNameEdit.next('input:visible').length).toBeGreaterThan(0);
-      });
-    });
-
-    describe("updating firstName", function() {
+   describe("editing firstName", function() {
       var firstNameEdit;
 
       beforeEach(function() {
-        var rendered = view.render()
-        firstNameEdit = rendered.find('.firstName.editable');
-        firstNameEdit.trigger("dblclick");
-        var editBox = firstNameEdit.next("input");
-        editBox.val('Adam Mi').trigger('change');
+        firstNameEdit = view.$el.find('.editable.firstName');
+        firstNameEdit.trigger('dblclick');
       });
 
-      it("sets first name on the user model", function(){
-        expect(adam.get("firstName")).toEqual()
+      it("displays an input field", function() {
+        expect(firstNameEdit.next('input.edit-me:visible').length).toBeGreaterThan(0);
       });
-    });    
-  })
+    });
 
+    describe("editing lastName", function() {
+      var lastNameEdit;
 
+      beforeEach(function() {
+        lastNameEdit = view.$el.find('.editable.lastName');
+        lastNameEdit.trigger('dblclick');
+      });
+
+      it("displays an input field", function() {
+        expect(lastNameEdit.next('input.edit-me:visible').length).toBeGreaterThan(0);
+      });
+    });
+
+    describe("update firstName", function() {
+      var firstNameEdit;
+
+      beforeEach(function() {
+        firstNameEdit = view.$el.find('.editable.firstName');
+        firstNameEdit.trigger('dblclick');
+        var editBox = firstNameEdit.next('input');
+        editBox.val('Adamanus').trigger('change');
+      });
+
+      it("set firstName on the user model", function() {
+        expect(adam.get('firstName')).toBe('Adamanus');
+      });
+
+      it("displays an input field", function() {
+        expect(firstNameEdit.next('input.edit-me:visible').length).toBe(0);
+      });
+
+      it("should display the user's name", function() {
+        expect(view.$el.find('h1').html()).toMatch(/Adamanus/);
+        expect(view.$el.find('h1').html()).toMatch(/Misrahi/);
+      });
+    });
+
+    describe("update lastName", function() {
+      var lastNameEdit;
+
+      beforeEach(function() {
+        lastNameEdit = view.$el.find('.editable.lastName');
+        lastNameEdit.trigger('dblclick');
+        var editBox = lastNameEdit.next('input');
+        editBox.val('Misrahinus').trigger('change');
+      });
+
+      it("set lastName on the user model", function() {
+        expect(adam.get('lastName')).toBe('Misrahinus');
+      });
+
+      it("displays an input field", function() {
+        expect(lastNameEdit.next('input.edit-me:visible').length).toBe(0);
+      });
+
+      it("should display the user's name", function() {
+        expect(view.$el.find('h1').html()).toMatch(/Adam/);
+        expect(view.$el.find('h1').html()).toMatch(/Misrahinus/);
+      });
+    });
+  });
 });
