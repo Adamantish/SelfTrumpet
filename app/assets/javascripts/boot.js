@@ -33,11 +33,4 @@ $(document).ready(function() {
     url: "Click to edit",
     body: "Click to edit"
   });
-
-  projectList.each(function(project) {
-    var view = new app.views.ProjectView({ model: project });
-    $('#project-list').append(view.render().el);
-  });
-
-
 });

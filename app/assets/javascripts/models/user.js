@@ -1,6 +1,21 @@
 
 app.models.User = Backbone.Model.extend({
 
+  localStorage: new Backbone.LocalStorage('user'),
+  
+  initialize: function() {
+    this.projects = new app.collections.ProjectList();
+    this.projects.user = this;
+    this.bind('sync', this.fetchProjects);
+
+  },
+
+  fetchProjects: function(){
+    this.projects.fetch();
+    debugger;
+    this.projects.reset(this.projects.where({ user_id: this.id }));
+  },
+
   defaults: {
     image_url: "assets/images/yourface.png",
     firstName: "First Name",
@@ -8,8 +23,7 @@ app.models.User = Backbone.Model.extend({
     bio: "Biography",
     firstName: "First Name",
   },
-  
-  localStorage: new Backbone.LocalStorage('user'),
+
 
   validate: function(attributes){    
     var errors = {

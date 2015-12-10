@@ -1,10 +1,12 @@
 app.models.Project = Backbone.Model.extend({
 
-  localStorage: new Backbone.LocalStorage('portfolio'),
+  localStorage: new Backbone.LocalStorage('projects'),
 
   validate: function() {
-    if(!this.attributes.url) return "URL can't be blank";
     if(!this.attributes.title) return "Title can't be blank";
+    if(!this.attributes.imageUrl) return "image URL can't be blank";
+    if(!this.attributes.projectUrl) return "project URL can't be blank";
+    
   }
 
 });

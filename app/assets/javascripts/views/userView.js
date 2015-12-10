@@ -19,7 +19,6 @@ app.views.UserView = Backbone.View.extend({
   },
 
   toggleVisible: function(e){
-    debugger;
     $(e.currentTarget).hide()
     $(e.currentTarget).next().show()
   },

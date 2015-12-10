@@ -1,8 +1,12 @@
 describe("User model", function() {
-  
+  var adam;
+  var someoneElse;
+
   beforeEach(function(){
     adam = new app.models.User({
       name: "Adam",
+      firstName: "Adam",
+      lastName: "Misrahi",
       bio: "(In production)",
       image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
       mission: "To tesco"
@@ -15,6 +19,9 @@ describe("User model", function() {
 
   it("validates against a user with no name and bio",function() {
     nameless = new app.models.User();
+    nameless.set("name", "")
+    nameless.set("bio", "")
+
     expect(nameless.isValid()).toBeFalsy()
     var messages = nameless.validationError.full_messages
     expect(_.indexOf(messages, "The Man/Woman/Transgender With No Name")).toNotEqual(-1)
@@ -45,8 +52,45 @@ describe("User model", function() {
       expect(adam.id).toBeDefined();
     });
 
+    describe('projects', function(){
+      beforeEach(function(){
+        debugger;
+        adam.projects.create({
+          title: "Demon Duck Hunt",
+          imageUrl: "thething.jpg",
+          projectUrl: "place.com/wah"
+        });
+      });
 
-  })
+      var someoneElse = new app.models.User({
+        name: "Guy",
+        firstName: "Guy",
+        lastName: "Mann",
+        bio: "(In production)",
+        image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
+        mission: "To tesco"
+      });
 
+      someoneElse.projects.create({
+        title: "Another Project",
+        imageUrl: "dsdfs.jpg",
+        projectUrl: "thing.com/thingy"
+      });
+
+      it("should store the project associated with the user", function(){
+        debugger;
+        var reloadedUser = new app.models.User({ id: adam.id });
+        reloadedUser.projects.fetch();
+ 
+        reloadedUser.projects.reset(reloadedUser.projects.where({ user_id: reloadedUser.id }))
+
+
+        expect(reloadedUser.projects.length).toBe(1);
+        expect(reloadedUser.projects.first().get('title')).toBe(1);
+        expect(reloadedUser.projects.first().get('imageUrl')).toBe(1);
+        expect(reloadedUser.projects.first().get('projectUrl')).toBe(1);
+      });
+    });
+  });
 });
 
