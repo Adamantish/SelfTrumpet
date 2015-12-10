@@ -22,7 +22,7 @@ app.models.User = Backbone.Model.extend({
   },
 
   // defaults: {
-  //   image_url: "../app/assets/images/yourface.png",
+  //   imageUrl: "../app/assets/images/yourface.png",
   //   firstName: "First Name",
   //   lastName: "Last Name",
   //   firstName: "First Name",

@@ -8,7 +8,7 @@ describe("User model", function() {
       firstName: "Adam",
       lastName: "Misrahi",
       bio: "(In production)",
-      image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
+      imageUrl: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
       mission: "To tesco"
     });
   });
@@ -29,11 +29,12 @@ describe("User model", function() {
 
     expect(nameless.isValid()).toBeFalsy()
     var messages = nameless.validationError.full_messages
-    expect(_.indexOf(messages, "The Man/Woman/Transgender With No Name")).toNotEqual(-1)
+    expect(_.indexOf(messages, "The Man/Woman/Transgender With No Surname")).toNotEqual(-1)
     expect(_.indexOf(messages, "Get a life")).toNotEqual(-1)
 
     // make it valid
-    nameless.set("name", "Mr Person")
+    nameless.set("firstName", "Mr Person")
+    nameless.set("lastName", "Parsons")
     nameless.set("bio", "Well, it's a life")
     expect(nameless.isValid()).toEqual(true)
   });
@@ -70,7 +71,7 @@ describe("User model", function() {
           firstName: "Guy",
           lastName: "Mann",
           bio: "(In production)",
-          image_url: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
+          imageUrl: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
           mission: "To tesco"
         });
 

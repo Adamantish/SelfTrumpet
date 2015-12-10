@@ -23,22 +23,22 @@
 
 
 <script type="text/template" id="user-template">
-  <img src=<%= get('image_url') %> width="200" height="200" alt="<%= get('firstName') %>"
-  class="image_url bio-image shadowed editable" />
+  <img src=<%= get('imageUrl') %> width="200" height="200" alt="<%= get('firstName') %>"
+  data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
 
   <div class="bio-text">
     <h1>
-      <span class="firstName editable"><%= get('firstName') || "First Name"%></span>
-      <span class="lastName editable"><%= get('lastName') || "Surname" %></span>
+      <span data-attributes='firstName' class="firstName editable"><%= get('firstName') || "First Name"%></span>
+      <span data-attributes='lastName' class="lastName editable"><%= get('lastName') || "Surname" %></span>
     </h1>
 
-    <h2 class="bio editable">
-      <%= get('bio') || "Bio" %>
+    <h2 data-attributes='bio' class="bio editable">
+      <%= get('bio') || "Biography" %>
     </h2>
     <input data-attributes='bio' class='bio edit-me hidden-edit' value=''>
 
-    <h3 class="mission editable">
-      <%= get('mission') %>
+    <h3 data-attributes='mission' class="mission editable">
+      <%= get('mission') || "Mission" %>
     </h3>
   </div>
 </script>

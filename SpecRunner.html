@@ -19,21 +19,22 @@
 
   
   <div id="fixtures" style="position: absolute; left: -9999px"> </div>
+
 <script type="text/template" id="user-template">
-  <img src=<%= get('image_url') %> width="200" height="200" alt="<%= get('firstName') %>"
-  class="imageUrl bio-image shadowed editable" />
+  <img src=<%= get('imageUrl') || "../app/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
+  data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
 
   <div class="bio-text">
     <h1>
-      <span class="firstName editable"><%= get('firstName') %></span>
-      <span class="lastName editable"><%= get('lastName') %></span>
+      <span data-attributes='firstName' class="firstName editable"><%= get('firstName') %></span>
+      <span data-attributes='lastName' class="lastName editable"><%= get('lastName') %></span>
     </h1>
 
-    <h2 class="bio editable">
+    <h2 data-attributes='bio' class="bio editable" >
       <%= get('bio') %>
     </h2>
 
-    <h3 class="mission editable">
+    <h3 data-attributes='mission' class="mission editable">
       <%= get('mission') %>
     </h3>
   </div>
@@ -123,8 +124,8 @@
 
 <!-- Test templates -->
 <script type="text/template" id="editable-spec-template">
-      <span class="firstName editable"><%= get('firstName') || "First Name" %></span>
-      <span class="lastName editable"><%= get('lastName') || "Last Name" %></span>
+      <span data-attributes='firstName' class="firstName editable"><%= get('firstName') || "First Name" %></span>
+      <span data-attributes='lastName' class="lastName editable"><%= get('lastName') || "Last Name" %></span>
 </script>
 
   <script type="text/javascript" src="app/assets/javascripts/app.js"></script>
