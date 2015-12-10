@@ -9,7 +9,7 @@ app.collections.ProjectList = Backbone.Collection.extend({
   },
 
   setUserId: function(projects) {
-    debugger;
+    
     if(!projects.id) {
       projects.set('user_id', this.user.id)
     };

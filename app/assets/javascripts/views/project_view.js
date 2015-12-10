@@ -9,7 +9,7 @@ app.views.ProjectView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html(this.template(this.model.toJSON()));
+    this.$el.html(this.template({ project: this.model }));
     this.listenTo(this.model, "change", this.render);
     return this;
   },

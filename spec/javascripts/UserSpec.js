@@ -77,18 +77,16 @@ describe("User model", function() {
 
       });
 
-
       it("should store the project associated with the user", function(){
     
-        debugger;
-
         var reloadedUser = new app.models.User({ id: adam.id });
-        reloadedUser.projects.fetch();
+        reloadedUser.fetch();
+        
 
         expect(reloadedUser.projects.length).toBe(1);
-        expect(reloadedUser.projects.first().get('title')).toBe(1);
-        expect(reloadedUser.projects.first().get('imageUrl')).toBe(1);
-        expect(reloadedUser.projects.first().get('projectUrl')).toBe(1);
+        expect(reloadedUser.projects.first().get('title')).toBe('Demon Duck Hunt');
+        expect(reloadedUser.projects.first().get('imageUrl')).toBe('thething.jpg');
+        expect(reloadedUser.projects.first().get('projectUrl')).toBe('place.com/wah');
       });
     });
   });

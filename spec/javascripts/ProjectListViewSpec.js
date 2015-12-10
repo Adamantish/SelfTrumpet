@@ -20,32 +20,47 @@ describe("ProjectListView", function(){
       projectUrl: "place.com/wah"
     });
 
-    view = new ap.views.ProjectListView({
+    view = new app.views.ProjectListView({
       collection: adam.projects
     });
+  });
 
-    it("creates a div#projects", function(){
-      expect(view.el.nodeName).toBe('DIV');
-      expect(view.el.id).toBe('projects');
+  it("creates a div#projects", function(){
+    expect(view.el.nodeName).toBe('DIV');
+    expect(view.el.id).toBe('projects');
+  });
+
+  describe('render', function(){
+
+    beforeEach(function(){
+      result = view.render();
     });
 
-    describe('render', function(){
+    it("returns the view", function(){
+      expect(result).toEqual(view);
+    });
 
-      beforeEach(function(){
-        result = view.render();
-      });
+    it("renders all the user's projects", function(){
+      expect(view.$el.find('.project').length).toBe(1);
+      expect(view.$el.find('.project').html()).toMatch(/Demon Duck Hunt/);
+      expect(view.$el.find('.project').html()).toMatch(/thething.jpg/);
+      expect(view.$el.find('.project').html()).toMatch(/place.com\/wah/);
+    });
+  });
 
-      it("returns the view", function(){
-        expect(result).toEqual(view);
-      });
+  describe("add new project", function() {
+    beforeEach(function () {
+      
+      view.render().$el.find("#add-project").trigger("click");
+    });
 
-      it("renders all the user's projects", function(){
-        expect(view.$el.find('.project').length).toBe(1);
-        expect(view.$el.find('.project').html()).toMatch(/Demon Duck Hunt/);
-        expect(view.$el.find('.project').html()).toMatch(/thething.jpg/);
-        expect(view.$el.find('.project').html()).toMatch(/place.com\/wah/);
+    it("adds a new project", function() {
+      expect(view.collection.length).toBe(2);
+    })
 
-      })
+    it("displays the new project", function() {
+      expect(view.$el.find('.project').length).toBe(2);
+      expect(view.$el.find('#project-list').html()).toMatch(/Your title/);
     });
   });
 });
