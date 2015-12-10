@@ -1,7 +1,6 @@
 app.views.ProjectListView = Backbone.View.extend({
 
   id: 'projects',
-
   template: _.template($('#project-list-template').html()),
 
   events: {
@@ -19,7 +18,7 @@ app.views.ProjectListView = Backbone.View.extend({
   },
 
   render: function (){
-    var  _this = this;
+    var _this = this;
     
     this.$el.html(this.template());
 

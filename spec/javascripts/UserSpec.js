@@ -13,6 +13,11 @@ describe("User model", function() {
     });
   });
 
+  it("can contenate to a fullName", function(){
+    debugger;
+    expect(adam.fullName()).toEqual("Adam Misrahi")
+  });
+
   it("can instantiate with some attributes", function(){
     expect(adam.get("name")).toEqual("Adam")
   });

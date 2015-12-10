@@ -18,13 +18,17 @@ app.models.User = Backbone.Model.extend({
     };
   },
 
-  defaults: {
-    image_url: "assets/images/yourface.png",
-    firstName: "First Name",
-    lastName: "Last Name",
-    bio: "Biography",
-    firstName: "First Name",
+  fullName: function(){
+    return this.attributes.firstName + " " + this.attributes.lastName;
   },
+
+  // defaults: {
+  //   image_url: "assets/images/yourface.png",
+  //   firstName: "First Name",
+  //   lastName: "Last Name",
+  //   bio: "Biography",
+  //   firstName: "First Name",
+  // },
 
 
   validate: function(attributes){    

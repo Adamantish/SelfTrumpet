@@ -29,6 +29,7 @@ describe("A Project", function() {
     it("should have an id", function() {
       expect(project.id).not.toBe(null);
     });
+
   });
 
   describe("validation", function() {

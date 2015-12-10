@@ -23,5 +23,11 @@ app.views.ProjectView = Backbone.View.extend({
     var new_title = $(e.currentTarget).val().trim();
     this.model.set('title', new_title);
     this.model.save();
+  },
+
+  removeProject: function(){
+    
   }
+
+
 });
