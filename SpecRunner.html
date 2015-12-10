@@ -39,21 +39,23 @@
   </div>
 </script>
   
-    <script type="text/template" id="project-list-template">
-        <h2>Recent Project Work</h2>
+<script type="text/template" id="project-list-template">
+    <h2>Recent Project Work</h2>
 
-        <div id="project-list"></div>
+    <div id="project-list"></div>
 
-        <button id="add-project">Add Project</button>
+    <button id="add-project">Add Project</button>
 
-        <div class='clear'></div>
+    <div class='clear'></div>
 
-    </script>
+</script>
 
-    <script type="text/template">
-      <img src='<%= %>'
-      <div><%= fullName %></div>
-    </script>
+<script type="text/template" id="user-list-item-template">
+  <li class='user'>
+    <img src='<%= model.get("imageUrl") %>' class='user__image-thumb'>
+    <p><%= model.fullName() %></p>
+  </li>
+</script>
 
 <script type="text/template" id="project-template">
   <div class="sortable">

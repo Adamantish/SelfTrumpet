@@ -19,7 +19,7 @@ app.models.User = Backbone.Model.extend({
   },
 
   fullName: function(){
-    return this.attributes.firstName + " " + this.attributes.lastName;
+    return this.get('firstName') + " " + this.get('lastName');
   },
 
   // defaults: {

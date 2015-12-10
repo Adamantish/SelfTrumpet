@@ -3,14 +3,15 @@ app.views.UserListView = Backbone.View.extend({
   id: 'user-list',
   tagName: 'ol',
 
+  template: _.template($('#user-list-item-template').html()),
+
 
   render: function(){
     var _this = this;
 
     this.collection.each(function(user){
-      debugger;
-      var userItemView = new app.views.UserListItemView({ model: user})
-      _this.$el.append(userItemView.render().el);
+      
+      _this.$el.append(_this.template({ model: user }));
     });
     return this;
   }

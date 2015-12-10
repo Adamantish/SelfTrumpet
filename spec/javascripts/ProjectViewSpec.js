@@ -12,7 +12,7 @@ describe("ProjectListView", function(){
 
     adam.save();
 
-    debugger;
+    
     
     var duck = adam.projects.create({
       title: "Demon Duck Hunt",

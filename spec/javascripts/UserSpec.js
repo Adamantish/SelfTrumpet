@@ -14,7 +14,7 @@ describe("User model", function() {
   });
 
   it("can contenate to a fullName", function(){
-    debugger;
+    
     expect(adam.fullName()).toEqual("Adam Misrahi")
   });
 
