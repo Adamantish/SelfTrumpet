@@ -2,7 +2,7 @@
 app.models.User = Backbone.Model.extend({
 
   localStorage: new Backbone.LocalStorage('user'),
-  
+
   initialize: function() {
     this.projects = new app.collections.ProjectList();
     this.projects.user = this;
@@ -11,9 +11,11 @@ app.models.User = Backbone.Model.extend({
   },
 
   fetchProjects: function(){
-    this.projects.fetch();
     debugger;
-    this.projects.reset(this.projects.where({ user_id: this.id }));
+    if(this.id){
+      this.projects.fetch();
+      this.projects.reset(this.projects.where({ user_id: this.id }));
+    };
   },
 
   defaults: {
