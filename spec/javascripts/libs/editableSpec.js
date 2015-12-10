@@ -47,7 +47,8 @@ describe("Editable", function(){
     });
 
     it("should do this with blank values when there are not yet attributes to bind to", function(){
-
+      var populatedModel = new Model({ firstName: "Cyril", lastName: "Battle" });
+      var view = new View({ model: populatedModel });
     });
 
   });
