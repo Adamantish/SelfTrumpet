@@ -34,7 +34,7 @@ describe("User model", function() {
 
     // make it valid
     nameless.set("firstName", "Mr Person")
-    nameless.set("lastName", "Parsons")
+    nameless.set("lastName", "Mr Person")
     nameless.set("bio", "Well, it's a life")
     expect(nameless.isValid()).toEqual(true)
   });

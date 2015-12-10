@@ -7,6 +7,8 @@ app.views.UserListView = Backbone.View.extend({
 
 
   render: function(){
+
+    debugger;
     var _this = this;
 
     this.collection.each(function(user){

@@ -6,6 +6,13 @@
   <title>My Amazing Fat Client Portfolio Builder</title>
   <link rel="stylesheet" href="../app/assets/stylesheets/main.css">
 
+  <script src="../app/assets/javascripts/libs/jquery-1.9.1.min.js"></script>
+  <script src="../app/assets/javascripts/libs/underscore-min.js"></script>
+  <script src="../app/assets/javascripts/libs/backbone.js"></script>
+  <script src="../app/assets/javascripts/libs/backbone.localStorage-min.js"></script>
+  <script src="../app/assets/javascripts/libs/editable.js"></script>
+</head>
+
   <body>
 
     <header id="navigation">
@@ -23,7 +30,7 @@
 
 
 <script type="text/template" id="user-template">
-  <img src=<%= get('imageUrl') %> width="200" height="200" alt="<%= get('firstName') %>"
+  <img src=<%= get('imageUrl') || "../app/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
   data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
 
   <div class="bio-text">
@@ -124,12 +131,6 @@
   </div>
 
 </script>
-
-  <script src="../app/assets/javascripts/libs/jquery-1.9.1.min.js"></script>
-  <script src="../app/assets/javascripts/libs/underscore-min.js"></script>
-  <script src="../app/assets/javascripts/libs/backbone.js"></script>
-  <script src="../app/assets/javascripts/libs/backbone.localStorage-min.js"></script>
-  <script src="../app/assets/javascripts/libs/editable.js"></script>
 
   <script type="text/javascript" src="../app/assets/javascripts/app.js"></script>
   <script type="text/javascript" src="../app/assets/javascripts/models/user.js"></script>

@@ -49,7 +49,6 @@ describe("User list view", function(){
       expect(view.$el.find('li.user').length).toBe(2);
       expect(view.$el.find('li.user:first').html()).toMatch(/Adam Misrahi/);
       expect(view.$el.find('li.user:last').html()).toMatch(/Guy Mann/);
-      expect(view.$el.find('li.user:last').html()).toMatch(/Guy Mann/);
 
       // expect(view.$el.find('li.user:first').html()).toMatch(/1b1fdf1.jpg/);
       // expect(view.$el.find('li.user:last').html()).toMatch(/madness.jpg/);

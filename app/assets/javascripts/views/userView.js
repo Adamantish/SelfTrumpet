@@ -11,10 +11,20 @@ app.views.UserView = Backbone.View.extend({
 
   },
 
+  initialize: function(){
+    this.listenTo(this.model, "change", this.render);
+  },
+
   render: function() {
     this.$el.html(this.template(this.model));
     Editable.makeInputBoxes(this)
-    this.listenTo(this.model, "change", this.render);
+
+    var projectListView = new app.views.ProjectListView({
+      collection: this.model.projects
+    });
+
+    this.$el.append(projectListView.render().el);
+
     return this;
   },
 
