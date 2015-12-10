@@ -3,8 +3,8 @@
 $(document).ready(function() {
 
   Backbone.history.start();
-  var usersController = new app.controllers.UserController();
-  usersController.navigate("users/1", { trigger : true })
-  }
+  var usersController = new app.controllers.UsersController();
+  
+  usersController.navigate("users/2", { trigger : true });
 
 });

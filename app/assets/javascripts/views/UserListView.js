@@ -10,9 +10,9 @@ app.views.UserListView = Backbone.View.extend({
     var _this = this;
 
     this.collection.each(function(user){
-      
-      _this.$el.append(_this.template({ model: user }));
+      _this.$el.append(_this.template({ user: user }));
     });
+
     return this;
   }
 

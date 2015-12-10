@@ -43,17 +43,15 @@
     <h2>Recent Project Work</h2>
 
     <div id="project-list"></div>
-
     <button id="add-project">Add Project</button>
-
     <div class='clear'></div>
 
 </script>
 
 <script type="text/template" id="user-list-item-template">
   <li class='user'>
-    <img src='<%= model.get("imageUrl") %>' class='user__image-thumb'>
-    <p><%= model.fullName() %></p>
+    <img src='<%= user.get("imageUrl") %>' class="user__image-thumb" alt="<%= user.fullName() %>">
+    <p><%= user.fullName() %></p>
   </li>
 </script>
 
@@ -123,6 +121,12 @@
 
 </script>
 
+<!-- Test templates -->
+<script type="text/template" id="editable-spec-template">
+      <span class="firstName editable"><%= get('firstName') || "First Name" %></span>
+      <span class="lastName editable"><%= get('lastName') || "Last Name" %></span>
+</script>
+
   <script type="text/javascript" src="app/assets/javascripts/app.js"></script>
 
   <script type="text/javascript" src="app/assets/javascripts/libs/editable.js"></script>
@@ -132,13 +136,13 @@
   <script type="text/javascript" src="app/assets/javascripts/views/project_view.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/views/ProjectListView.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/views/UserListView.js"></script>
-  <script type="text/javascript" src="app/assets/javascripts/views/UserListItemView.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/collections/UserList.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/collections/project_list.js"></script>
   <script type="text/javascript" src="app/assets/javascripts/controllers/UsersController.js"></script>
 
 
  <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/javascripts/libs/editableSpec.js"></script>
   <script type="text/javascript" src="spec/javascripts/SpecHelper.js"></script>
   <script type="text/javascript" src="spec/javascripts/ProjectSpec.js"></script>
   <script type="text/javascript" src="spec/javascripts/UserSpec.js"></script>
@@ -179,5 +183,6 @@
 </head>
 
 <body>
+  <main id="content"></main>
 </body>
 </html>

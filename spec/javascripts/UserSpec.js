@@ -87,7 +87,6 @@ describe("User model", function() {
         var reloadedUser = new app.models.User({ id: adam.id });
         reloadedUser.fetch();
         
-
         expect(reloadedUser.projects.length).toBe(1);
         expect(reloadedUser.projects.first().get('title')).toBe('Demon Duck Hunt');
         expect(reloadedUser.projects.first().get('imageUrl')).toBe('thething.jpg');

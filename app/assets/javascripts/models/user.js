@@ -13,7 +13,6 @@ app.models.User = Backbone.Model.extend({
   fetchProjects: function(){
     if(this.id){
       this.projects.fetch();
-        
       this.projects.reset(this.projects.where({ user_id: this.id }));
     };
   },
@@ -23,11 +22,11 @@ app.models.User = Backbone.Model.extend({
   },
 
   // defaults: {
-  //   image_url: "assets/images/yourface.png",
+  //   image_url: "..app/assets/images/yourface.png",
   //   firstName: "First Name",
   //   lastName: "Last Name",
-  //   bio: "Biography",
   //   firstName: "First Name",
+  //   mission: "Your Mission"
   // },
 
 
@@ -36,7 +35,8 @@ app.models.User = Backbone.Model.extend({
       full_messages: []
     };
 
-    if(!attributes.name) errors.full_messages.push("The Man/Woman/Transgender With No Name")
+    if(!attributes.firstName) errors.full_messages.push("The Man/Woman/Transgender With No Christian Name")
+    if(!attributes.lastName) errors.full_messages.push("The Man/Woman/Transgender With No Surname")
     if(!attributes.bio) errors.full_messages.push("Get a life")
 
     if(errors.full_messages.length > 0) return errors

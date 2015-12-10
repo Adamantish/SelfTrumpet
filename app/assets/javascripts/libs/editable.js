@@ -1,7 +1,7 @@
 
 var Editable = function(){};
 
-Editable.prototype.makeInputBoxes = function(view) {
+Editable.makeInputBoxes = function(view) {
 
   var $el = view.$el
   var model = view.model
@@ -22,4 +22,3 @@ Editable.prototype.makeInputBoxes = function(view) {
 
 };
 
-var editable = new Editable()

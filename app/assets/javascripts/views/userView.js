@@ -13,7 +13,7 @@ app.views.UserView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.model));
-    this.$el = $(editable.makeInputBoxes(this))
+    this.$el = $(Editable.makeInputBoxes(this))
     this.listenTo(this.model, "change", this.render);
     return this;
   },
