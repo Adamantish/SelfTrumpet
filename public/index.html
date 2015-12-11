@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>My Amazing Fat Client Portfolio Builder</title>
-  <link rel="stylesheet" href="../app/assets/stylesheets/main.css">
+  <link rel="stylesheet" href="/assets/main.css">
 
-  <script src="../app/assets/javascripts/libs/jquery-1.9.1.min.js"></script>
-  <script src="../app/assets/javascripts/libs/underscore-min.js"></script>
-  <script src="../app/assets/javascripts/libs/backbone.js"></script>
-  <script src="../app/assets/javascripts/libs/editable.js"></script>
-  
+  <script src="/assets/libs/jquery-1.9.1.min.js"></script>
+  <script src="/assets/libs/underscore-min.js"></script>
+  <script src="/assets/libs/backbone.js"></script>
+  <script src="/assets/libs/editable.js"></script>
+
 </head>
 
   <body>
@@ -30,7 +30,7 @@
 
 
 <script type="text/template" id="user-template">
-  <img src=<%= get('imageUrl') || "../app/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
+  <img src=<%= get('imageUrl') || "/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
   data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
 
   <div class="bio-text">
@@ -132,17 +132,17 @@
 
 </script>
 
-  <script type="text/javascript" src="../app/assets/javascripts/app.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/models/user.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/views/userView.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/models/project.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/views/project_view.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/views/ProjectListView.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/views/UserListView.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/collections/UserList.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/collections/project_list.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/controllers/UsersController.js"></script>
-  <script type="text/javascript" src="../app/assets/javascripts/boot.js"></script>
+  <script type="text/javascript" src="/assets/app.js"></script>
+  <script type="text/javascript" src="/assets/models/user.js"></script>
+  <script type="text/javascript" src="/assets/views/userView.js"></script>
+  <script type="text/javascript" src="/assets/models/project.js"></script>
+  <script type="text/javascript" src="/assets/views/project_view.js"></script>
+  <script type="text/javascript" src="/assets/views/ProjectListView.js"></script>
+  <script type="text/javascript" src="/assets/views/UserListView.js"></script>
+  <script type="text/javascript" src="/assets/collections/UserList.js"></script>
+  <script type="text/javascript" src="/assets/collections/project_list.js"></script>
+  <script type="text/javascript" src="/assets/controllers/UsersController.js"></script>
+  <script type="text/javascript" src="/assets/boot.js"></script>
 
 
 </html>
