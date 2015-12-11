@@ -22,11 +22,15 @@ app.controllers.UsersController = Backbone.Router.extend({
     debugger;
     // Model    
     var users = new app.collections.UserList();
-    users.fetch();
+    users.fetch({
+      success: function(users){
+        var userListView = new app.views.UserListView({ collection: users });
+        $('#content').html(userListView.render().el);
+      }
+    });
 
-    // View
-    var userListView = new app.views.UserListView({ collection: users });
-    $('#content').html(userListView.render().el);
+
+    
   }
 
 });

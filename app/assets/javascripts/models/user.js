@@ -42,5 +42,16 @@ app.models.User = Backbone.Model.extend({
     if(!attributes.bio) errors.full_messages.push("Get a life")
 
     if(errors.full_messages.length > 0) return errors
+  },
+
+  toJSON: function(){
+    return {
+      id: this.id,
+      first_name: this.get('firstName'),
+      lastName: this.get('lastName'),
+      etc: thing
+    };
   }
+
+  
 });
