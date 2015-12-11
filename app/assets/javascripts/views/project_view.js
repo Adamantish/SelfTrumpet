@@ -44,7 +44,6 @@ app.views.ProjectView = Backbone.View.extend({
     var newVal = $el.val().trim();
     var field = $el.data("attributes")
     this.model.set(field, newVal);
-    debugger;
     this.model.save();
   }
 

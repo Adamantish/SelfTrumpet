@@ -12,7 +12,7 @@ app.views.UserView = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.listenTo(this.model, "change:firstName change:mission", this.render);
+    this.listenTo(this.model, "change:firstName change:lastName change:bio change:mission", this.render);
   },
 
   render: function() {
