@@ -13,7 +13,6 @@ describe("ProjectListView", function(){
     adam.save();
 
     
-    
     var duck = adam.projects.create({
       title: "Demon Duck Hunt",
       imageUrl: "thething.jpg",

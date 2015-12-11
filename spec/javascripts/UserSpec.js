@@ -45,17 +45,49 @@ describe("User model", function() {
   });
 
   describe("when persisted", function() {
+    var success;
+    var error;
+
     beforeEach(function(){
-      adam.save();
+      jasmine.Ajax.install(); 
+
+      success = jasmine.createSpy("success")    
+      error = jasmine.createSpy("error")    
+
     });
 
     afterEach(function(){
-      localStorage.clear();
+      jasmine.Ajax.uninstall();      
     });
 
-    it("has a cid but not an id", function(){
-      expect(adam.cid).toBeDefined();
-      expect(adam.id).toBeDefined();
+    it("should make a POST request to /users", function(){
+
+      adam.save(adam.toJSON(), {
+        success: success,
+        error: error
+      });
+
+      var request = jasmine.Ajax.requests.mostRecent();
+      expect(request.method).toBe("POST");
+      expect(request.url).toBe("/users");
+      expect(request.data()).toEqual(adam.toJSON());
+
+      var responseFromApi = {
+        status: 201,
+        responseText: JSON.stringify({
+          id: 1,       
+          name: "Adam",
+          firstName: "Adam",
+          lastName: "Misrahi",
+          bio: "(In production)",
+          imageUrl: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
+          mission: "To tesco"
+        })
+      };
+
+      request.respondWith(responseFromApi);
+
+      expect(success).toHaveBeenCalled();
     });
 
     describe('projects', function(){
@@ -66,7 +98,7 @@ describe("User model", function() {
           projectUrl: "place.com/wah"
         });
 
-        var someoneElse = new app.models.User({
+        someoneElse = new app.models.User({
           name: "Guy",
           firstName: "Guy",
           lastName: "Mann",
@@ -76,17 +108,38 @@ describe("User model", function() {
         });
 
         someoneElse.projects.create({
-          title: "Another Project",
-          imageUrl: "dsdfs.jpg",
-          projectUrl: "thing.com/thingy"
-        });
 
+            title: "Another Project",
+            imageUrl: "dsdfs.jpg",
+            projectUrl: "thing.com/thingy",
+            user_id: 1
+          }, 
+          {
+            success: success,
+            error: error
+          }
+        );
+
+        debugger;
+      });
+
+      it("makes a POST request to /projects", function(){
+
+        var request = jasmine.Ajax.requests.mostRecent();
+        expect(request.method).toBe("POST");
+        expect(request.url).toBe("/projects");
+        debugger;
+
+        expect(request.data()).toBe(someoneElse.projects.first().toJSON());
       });
 
       it("should store the project associated with the user", function(){
     
         var reloadedUser = new app.models.User({ id: adam.id });
         reloadedUser.fetch();
+        var userFetch = jasmine.Ajax.requests.mostRecent();
+        expect(projectsFetch.method).toBe("GET");
+        expect(projectsFetch.url).toBe("/projects");
         
         expect(reloadedUser.projects.length).toBe(1);
         expect(reloadedUser.projects.first().get('title')).toBe('Demon Duck Hunt');
