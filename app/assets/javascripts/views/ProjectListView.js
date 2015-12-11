@@ -8,12 +8,13 @@ app.views.ProjectListView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.listenTo(this.collection, "add", this.render);
+    // this.listenTo(this.collection, "add", this.render);
   },
 
   addProject: function(){
     
     this.collection.add({});
+    this.render();
     
   },
 
@@ -21,7 +22,6 @@ app.views.ProjectListView = Backbone.View.extend({
     var _this = this;
     
     this.$el.html(this.template());
-
     this.collection.each(function(project) {
       var view = new app.views.ProjectView({ model: project });
       _this.$el.find('#project-list').append(view.render().el);

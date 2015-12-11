@@ -12,7 +12,7 @@ app.views.UserView = Backbone.View.extend({
   },
 
   initialize: function(){
-    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "change:firstName change:mission", this.render);
   },
 
   render: function() {
@@ -24,7 +24,6 @@ app.views.UserView = Backbone.View.extend({
     });
 
     this.$el.append(projectListView.render().el);
-
     return this;
   },
 

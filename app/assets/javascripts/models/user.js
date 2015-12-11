@@ -1,7 +1,7 @@
 
 app.models.User = Backbone.Model.extend({
 
-  localStorage: new Backbone.LocalStorage('user'),
+  localStorage: new Backbone.LocalStorage('users'),
 
   initialize: function() {
     this.projects = new app.collections.ProjectList();

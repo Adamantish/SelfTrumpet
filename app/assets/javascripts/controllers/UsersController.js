@@ -13,14 +13,14 @@ app.controllers.UsersController = Backbone.Router.extend({
 
     // view
     var view = new app.views.UserView({ model: user })
-    $('#content').append(view.render().el)
+    $('#content').html(view.render().el)
 
   },
 
   index: function(){
-    
+
     // Model    
-    var users = app.collections.UserList();
+    var users = new app.collections.UserList();
     users.fetch();
 
     // View

@@ -62,16 +62,14 @@
 
   <div class="info">
     <img src="<%= project.get('imageUrl') || 'images/ablank.jpg' %>" width="350" height="165"
-    alt="My Amazing Project" class="project-image shadowed" />
+    alt="My Amazing Project" data-attributes='imageUrl' class="project-image shadowed editable" />
 
     <div class="project-details">
-      <h3 class="project-name">
+      <h3 data-attributes="title" class="title editable">
         <%= project.get('title') || "Your title" %>
       </h3>
 
-      <input class="edit-title hidden-edit" placeholder="Enter a title">
-
-      <a href="<%= project.get('projectUrl') %>">
+      <a data-attributes="projectUrl" class="projectUrl editable" href="<%= project.get('projectUrl') %>">
         <%= project.get('projectUrl') || "Just\/some\/stuff" %>
       </a>
 
