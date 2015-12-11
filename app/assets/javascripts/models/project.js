@@ -1,7 +1,7 @@
 app.models.Project = Backbone.Model.extend({
 
-  urlRoot: 'projects/',
-  
+  urlRoot: '/projects',
+
   validate: function() {
 
     if(!this.attributes.title) return "Title can't be blank";

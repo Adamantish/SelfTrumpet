@@ -19,6 +19,7 @@ app.controllers.UsersController = Backbone.Router.extend({
 
   index: function(){
 
+    debugger;
     // Model    
     var users = new app.collections.UserList();
     users.fetch();

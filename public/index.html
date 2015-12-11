@@ -6,10 +6,6 @@
   <title>My Amazing Fat Client Portfolio Builder</title>
   <link rel="stylesheet" href="/assets/main.css">
 
-  <script src="/assets/libs/jquery-1.9.1.min.js"></script>
-  <script src="/assets/libs/underscore-min.js"></script>
-  <script src="/assets/libs/backbone.js"></script>
-  <script src="/assets/libs/editable.js"></script>
 
 </head>
 
@@ -25,10 +21,8 @@
     </footer>
 
   </body>
-  <!-- Load application scripts at the end of the body, so that we
-  don't slow up the loading time of the DOM -->
 
-
+  
 <script type="text/template" id="user-template">
   <img src=<%= get('imageUrl') || "/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
   data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
@@ -132,17 +126,9 @@
 
 </script>
 
-  <script type="text/javascript" src="/assets/app.js"></script>
-  <script type="text/javascript" src="/assets/models/user.js"></script>
-  <script type="text/javascript" src="/assets/views/userView.js"></script>
-  <script type="text/javascript" src="/assets/models/project.js"></script>
-  <script type="text/javascript" src="/assets/views/project_view.js"></script>
-  <script type="text/javascript" src="/assets/views/ProjectListView.js"></script>
-  <script type="text/javascript" src="/assets/views/UserListView.js"></script>
-  <script type="text/javascript" src="/assets/collections/UserList.js"></script>
-  <script type="text/javascript" src="/assets/collections/project_list.js"></script>
-  <script type="text/javascript" src="/assets/controllers/UsersController.js"></script>
-  <script type="text/javascript" src="/assets/boot.js"></script>
-
+ 
+  <!-- Load application scripts at the end of the body, so that we
+  don't slow up the loading time of the DOM -->
+<script type="text/javascript" src="assets/application.js"></script>
 
 </html>
