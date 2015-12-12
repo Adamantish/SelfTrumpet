@@ -35,6 +35,11 @@ RSpec.describe UsersController, type: :controller do
       user_json = JSON(response.body)
       expect(user_json['id']).to eq(@last_user.id)
       expect(user_json['firstName']).to eq("Adam")
+      expect(user_json['lastName']).to eq("Misrahi")
+      expect(user_json['bio']).to eq("Bio")
+      expect(user_json['mission']).to eq("Mission")
+      expect(user_json['imageUrl']).to eq("/uploads/me.jpg")
+
     end
   end
 end
