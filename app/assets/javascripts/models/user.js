@@ -12,6 +12,11 @@ app.models.User = Backbone.Model.extend({
 
   },
 
+  parse: function(response) {
+    var projects = new app.collection.ProjectList(response.projects)
+    return response;
+  };
+
   fetchProjects: function(){
     if(this.id){
       this.projects.fetch();

@@ -20,6 +20,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'jasmine'
 end
 
 group :development do

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner v2.4.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.0/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.0/jasmine.css">
+
+  <script src="lib/jasmine-2.4.0/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.0/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.0/boot.js"></script>
+  <script src="lib/jasmine-2.4.0/mock-ajax.js"></script>
+
+  <!-- include source files here... -->
+  <script src="app/assets/javascripts/libs/jquery-1.9.1.min.js"></script>
+  <script src="app/assets/javascripts/libs/underscore-min.js"></script>
+  <script src="app/assets/javascripts/libs/backbone.js"></script>
+  
+  <div id="fixtures" style="position: absolute; left: -9999px"> </div>
+
+<script type="text/template" id="user-template">
+  <img src=<%= get('imageUrl') || "../app/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
+  data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
+
+  <div class="bio-text">
+    <h1>
+      <span data-attributes='firstName' class="firstName editable"><%= get('firstName') %></span>
+      <span data-attributes='lastName' class="lastName editable"><%= get('lastName') %></span>
+    </h1>
+
+    <h2 data-attributes='bio' class="bio editable" >
+      <%= get('bio') %>
+    </h2>
+
+    <h3 data-attributes='mission' class="mission editable">
+      <%= get('mission') %>
+    </h3>
+  </div>
+</script>
+  
+<script type="text/template" id="project-list-template">
+    <h2>Recent Project Work</h2>
+
+    <div id="project-list"></div>
+    <button id="add-project">Add Project</button>
+    <div class='clear'></div>
+
+</script>
+
+<script type="text/template" id="user-list-item-template">
+  <li class='user'>
+    <img src='<%= user.get("imageUrl") %>' class="user__image-thumb" alt="<%= user.fullName() %>">
+    <p><%= user.fullName() %></p>
+  </li>
+</script>
+
+<script type="text/template" id="project-template">
+  <div class="sortable">
+  </div>
+
+  <div class="info">
+    <img src="<%= project.get('imageUrl') || 'images/ablank.jpg' %>" width="350" height="165"
+    alt="My Amazing Project" data-attributes='imageUrl' class="project-image shadowed editable" />
+
+    <div class="project-details">
+      <h3 data-attributes="title" class="title editable">
+        <%= project.get('title') || "Your title" %>
+      </h3>
+
+      <a data-attributes="projectUrl" class="projectUrl editable" href="<%= project.get('projectUrl') %>">
+        <%= project.get('projectUrl') || "Just\/some\/stuff" %>
+      </a>
+
+      <div class="skills">
+        <span class="skill-label">
+          Skills:
+        </span>
+
+        <ul class="skill-list">
+          <li class="skill">
+            <span class="skill-name">Ruby</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">Rails</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">AJAX</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">HTML 5</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">CSS</span>
+            <span class="delete">Remove</span>
+          </li>
+          <li class="skill">
+            <span class="skill-name">Javascript</span>
+            <span class="delete">Remove</span>
+          </li>
+        </ul>
+
+        <span class="add-skill">Add Skill</span>
+      </div>
+
+      <div class="body">
+        <%= project.get('body') || "I need your body" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="remove-project">
+    Remove Project
+  </div>
+
+</script>
+
+<!-- Test templates -->
+<script type="text/template" id="editable-spec-template">
+      <span data-attributes='firstName' class="firstName editable"><%= get('firstName') || "First Name" %></span>
+      <span data-attributes='lastName' class="lastName editable"><%= get('lastName') || "Last Name" %></span>
+</script>
+
+  <script type="text/javascript" src="app/assets/javascripts/app.js"></script>
+
+  <script type="text/javascript" src="app/assets/javascripts/libs/editable.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/models/user.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/views/userView.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/models/project.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/views/project_view.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/views/ProjectListView.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/views/UserListView.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/collections/UserList.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/collections/project_list.js"></script>
+  <script type="text/javascript" src="app/assets/javascripts/controllers/UsersController.js"></script>
+
+
+ <!-- include spec files here... -->
+  <script type="text/javascript" src="spec/javascripts/libs/editableSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/SpecHelper.js"></script>
+  <script type="text/javascript" src="spec/javascripts/ProjectSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/UserSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/UserViewSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/UserListViewSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/ProjectListViewSpec.js"></script>
+  <script type="text/javascript" src="spec/javascripts/ProjectViewSpec.js"></script>
+
+
+</head>
+
+<body>
+  <main id="content"></main>
+</body>
+</html>

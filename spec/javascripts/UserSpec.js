@@ -120,7 +120,6 @@ describe("User model", function() {
           }
         );
 
-        debugger;
       });
 
       it("makes a POST request to /projects", function(){
@@ -128,7 +127,6 @@ describe("User model", function() {
         var request = jasmine.Ajax.requests.mostRecent();
         expect(request.method).toBe("POST");
         expect(request.url).toBe("/projects");
-        debugger;
 
         expect(request.data()).toBe(someoneElse.projects.first().toJSON());
       });
@@ -148,5 +146,9 @@ describe("User model", function() {
       });
     });
   });
+
+  it("should GET a collection of projects nested inside it"){
+    expect.reloadedUser.projects
+  };
 });
 
