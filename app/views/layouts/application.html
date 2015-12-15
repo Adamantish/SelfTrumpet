@@ -3,9 +3,7 @@
   <head>
     <title>Fat Client - The Portfolio Builder</title>
 
-    <%= 
-    binding.pry
-    @templates %>
+    <%= @templates.html_safe %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

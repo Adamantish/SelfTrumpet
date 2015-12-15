@@ -17,6 +17,7 @@ RSpec.describe UsersController, type: :controller do
 
     @last_user.projects << @duck
     @last_user.projects << @carousel
+    
   end
 
   # index

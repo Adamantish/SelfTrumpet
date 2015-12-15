@@ -1,3 +1,5 @@
+
+
 describe("User model", function() {
   var adam;
   var someoneElse;
@@ -11,6 +13,7 @@ describe("User model", function() {
       imageUrl: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
       mission: "To tesco"
     });
+
   });
 
   it("can contenate to a fullName", function(){
@@ -51,8 +54,8 @@ describe("User model", function() {
     beforeEach(function(){
       jasmine.Ajax.install(); 
 
-      success = jasmine.createSpy("success")    
-      error = jasmine.createSpy("error")    
+      successSpy = jasmine.createSpy("success")    
+      errorSpy = jasmine.createSpy("error")    
 
     });
 
@@ -63,8 +66,8 @@ describe("User model", function() {
     it("should make a POST request to /users", function(){
 
       adam.save(adam.toJSON(), {
-        success: success,
-        error: error
+        success: successSpy,
+        error: errorSpy
       });
 
       var request = jasmine.Ajax.requests.mostRecent();
@@ -87,18 +90,15 @@ describe("User model", function() {
 
       request.respondWith(responseFromApi);
 
-      expect(success).toHaveBeenCalled();
+      expect(successSpy).toHaveBeenCalled();
     });
 
     describe('projects', function(){
       beforeEach(function(){
-        adam.projects.create({
-          title: "Demon Duck Hunt",
-          imageUrl: "thething.jpg",
-          projectUrl: "place.com/wah"
-        });
+
 
         someoneElse = new app.models.User({
+          id: 2,
           name: "Guy",
           firstName: "Guy",
           lastName: "Mann",
@@ -112,43 +112,79 @@ describe("User model", function() {
             title: "Another Project",
             imageUrl: "dsdfs.jpg",
             projectUrl: "thing.com/thingy",
-            user_id: 1
           }, 
           {
-            success: success,
-            error: error
+            success: successSpy,
+            error: errorSpy
           }
         );
 
+        duckHash = {
+          title: "Demon Duck Hunt",
+          imageUrl: "thething.jpg",
+          projectUrl: "place.com/wah"
+        };
+
+        someoneElse.projects.create( duckHash );
+
       });
 
-      it("makes a POST request to /projects", function(){
+      it("makes a POST request to /projects with ", function(){
 
         var request = jasmine.Ajax.requests.mostRecent();
         expect(request.method).toBe("POST");
         expect(request.url).toBe("/projects");
+        // TODO: Add test for request body
 
         expect(request.data()).toBe(someoneElse.projects.first().toJSON());
       });
 
-      it("should store the project associated with the user", function(){
-    
+      it("should retrieve the project associated with the user", function(){
+        
+        debugger;
+        var responseFromApi = {
+          status: 201,
+          responseText: JSON.stringify({
+            id: 1,       
+            name: "Adam",
+            firstName: "Adam",
+            lastName: "Misrahi",
+            bio: "(In production)",
+            imageUrl: "https://media.licdn.com/mpr/mpr/shrink_200_200/p/3/005/05e/1be/1b1fdf1.jpg",
+            mission: "To tesco",
+            projects: [ duckHash ]
+            })
+        };
+
+        debugger;
         var reloadedUser = new app.models.User({ id: adam.id });
         reloadedUser.fetch();
+
         var userFetch = jasmine.Ajax.requests.mostRecent();
-        expect(projectsFetch.method).toBe("GET");
-        expect(projectsFetch.url).toBe("/projects");
+
+        expect(userFetch.method).toBe("GET");
+        // expect(userFetch.url).toBe("/users/1");
+
+        userFetch.respondWith(responseFromApi)
+
+        // expect(userFetch.responseText).toBe(responseFromApi.responseText)
         
         expect(reloadedUser.projects.length).toBe(1);
-        expect(reloadedUser.projects.first().get('title')).toBe('Demon Duck Hunt');
-        expect(reloadedUser.projects.first().get('imageUrl')).toBe('thething.jpg');
-        expect(reloadedUser.projects.first().get('projectUrl')).toBe('place.com/wah');
+        // expect(reloadedUser.projects.first().get('title')).toBe('Demon Duck Hunt');
+        // expect(reloadedUser.projects.first().get('imageUrl')).toBe('thething.jpg');
+        // expect(reloadedUser.projects.first().get('projectUrl')).toBe('place.com/wah');
       });
+
+      describe("projects nested in users", function(){
+
+        it("should ", function(){
+          expect
+        });
+  
+      });
+
     });
   });
 
-  it("should GET a collection of projects nested inside it"){
-    expect.reloadedUser.projects
-  };
 });
 

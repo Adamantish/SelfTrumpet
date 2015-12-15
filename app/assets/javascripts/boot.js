@@ -4,8 +4,7 @@ $(document).ready(function() {
 
   Backbone.history.start();
   var usersController = new app.controllers.UsersController();
-
-  debugger;
+  
   usersController.navigate("users", { trigger : true });
 
 });

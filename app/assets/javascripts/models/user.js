@@ -13,16 +13,18 @@ app.models.User = Backbone.Model.extend({
   },
 
   parse: function(response) {
-    var projects = new app.collection.ProjectList(response.projects)
+    debugger;
+    // var projects = new app.collections.ProjectList(response.projects)
+    user.projects.reset(response.projects)
     return response;
-  };
-
-  fetchProjects: function(){
-    if(this.id){
-      this.projects.fetch();
-      this.projects.reset(this.projects.where({ user_id: this.id }));
-    };
   },
+
+  // fetchProjects: function(){
+  //   if(this.id){
+  //     this.projects.fetch();
+  //     this.projects.reset(this.projects.where({ user_id: this.id }));
+  //   };
+  // },
 
   fullName: function(){
     return this.get('firstName') + " " + this.get('lastName');
@@ -53,7 +55,7 @@ app.models.User = Backbone.Model.extend({
     return {
       id: this.id,
       first_name: this.get('firstName'),
-      lastName: this.get('lastName'),
+      last_name: this.get('lastName'),
       etc: thing
     };
   }

@@ -12,7 +12,6 @@ app.views.UserListView = Backbone.View.extend({
   render: function(){
 
     var _this = this;
-
     $("<h2>The Users</h2>").insertBefore(this.$el);
 
     this.collection.each(function(user){

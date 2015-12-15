@@ -1,0 +1,1 @@
+//= require libs/jasmine/mock-ajax.js

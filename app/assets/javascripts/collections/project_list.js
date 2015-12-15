@@ -4,14 +4,14 @@ app.collections.ProjectList = Backbone.Collection.extend({
 
   // localStorage: new Backbone.LocalStorage('portfolio'),
 
-  url: '/projects',
+  urlRoot: '/projects',
   
   initialize: function() {
     this.bind("add", this.setUserId);
   },
 
   setUserId: function(projects) {
-    
+    debugger;
     if(!projects.id) {
       projects.set('user_id', this.user.id)
     };

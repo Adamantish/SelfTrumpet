@@ -9,7 +9,7 @@ app.controllers.UsersController = Backbone.Router.extend({
 
     // model
     var user = new app.models.User({ id: id });
-    user.fetch();
+    user.fetch({});
 
     // view
     var view = new app.views.UserView({ model: user })
@@ -19,11 +19,11 @@ app.controllers.UsersController = Backbone.Router.extend({
 
   index: function(){
 
-    debugger;
     // Model    
     var users = new app.collections.UserList();
     users.fetch({
       success: function(users){
+        debugger;
         var userListView = new app.views.UserListView({ collection: users });
         $('#content').html(userListView.render().el);
       }
