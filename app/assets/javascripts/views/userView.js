@@ -3,7 +3,8 @@ app.views.UserView = Backbone.View.extend({
   tagName: 'div',
   className: "container__bio",
   id: "user",
-  template: _.template($('#user-template').html()),
+  template: JST['templates/users/show'],
+  // template: _.template($('#user-template').html()),
   events: {
     'dblclick .editable': 'toggleVisible',
     'blur .edit-me': 'updateElement',

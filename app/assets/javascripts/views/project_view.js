@@ -2,7 +2,8 @@ app.views.ProjectView = Backbone.View.extend({
 
   tagName: 'div',
   className: 'project',
-  template: _.template($('#project-template').html()),
+  template: JST['templates/projects/show'],
+
   events: {  
     'dblclick .editable': 'toggleVisible',
     // 'blur .edit-me': 'updateElement',

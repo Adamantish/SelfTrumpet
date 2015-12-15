@@ -3,10 +3,12 @@
 //= require libs/underscore-min.js
 //= require libs/backbone.js
 //= require libs/editable.js
+//= require libs/ejs.js
 //= require app.js
 
 //= require_tree ./models
 //= require_tree ./collections
-//= require_tree ./controllers
+//= require_tree ./templates
 //= require_tree ./views
+//= require_tree ./controllers
 //= require boot.js

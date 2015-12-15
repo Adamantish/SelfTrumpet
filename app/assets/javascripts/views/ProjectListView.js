@@ -1,7 +1,7 @@
 app.views.ProjectListView = Backbone.View.extend({
 
   id: 'projects',
-  template: _.template($('#project-list-template').html()),
+  template: JST['templates/projects/index'],
 
   events: {
     "click #add-project": "addProject"

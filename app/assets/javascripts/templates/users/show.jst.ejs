@@ -1,0 +1,18 @@
+<img src=<%= get('imageUrl') || "/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
+data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
+
+<div class="bio-text">
+  <h1>
+    <span data-attributes='firstName' class="firstName editable"><%= get('firstName') || "First Name"%></span>
+    <span data-attributes='lastName' class="lastName editable"><%= get('lastName') || "Surname" %></span>
+  </h1>
+
+  <h2 data-attributes='bio' class="bio editable">
+    <%= get('bio') || "Biography" %>
+  </h2>
+  <input data-attributes='bio' class='bio edit-me hidden-edit' value=''>
+
+  <h3 data-attributes='mission' class="mission editable">
+    <%= get('mission') || "Mission" %>
+  </h3>
+</div>
