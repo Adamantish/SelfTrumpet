@@ -55,6 +55,7 @@ describe("User View", function () {
   describe("events", function(){
     
     beforeEach(function() {
+      $('body').append("<div id='fixtures'></div>")
       $('#fixtures').html(view.render().el);
     });
 

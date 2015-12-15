@@ -1,0 +1,18 @@
+<img src=<%= @user.imageUrl || "/assets/images/yourface.png" %> width="200" height="200" alt="<%= @user.first_name %>"
+data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
+
+<div class="bio-text">
+  <h1>
+    <span data-attributes='firstName' class="firstName editable"><%= @user.first_name || "First Name"%></span>
+    <span data-attributes='lastName' class="lastName editable"><%= @user.last_name || "Surname" %></span>
+  </h1>
+
+  <h2 data-attributes='bio' class="bio editable">
+    <%= @user.bio || "Biography" %>
+  </h2>
+  <input data-attributes='bio' class='bio edit-me hidden-edit' value=''>
+
+  <h3 data-attributes='mission' class="mission editable">
+    <%= @user.mission || "Mission" %>
+  </h3>
+</div>
