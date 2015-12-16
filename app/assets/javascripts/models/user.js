@@ -8,23 +8,15 @@ app.models.User = Backbone.Model.extend({
   initialize: function() {
     this.projects = new app.collections.ProjectList();
     this.projects.user = this;
-    this.bind('sync', this.fetchProjects);
-
   },
 
   parse: function(response) {
-    debugger;
-    // var projects = new app.collections.ProjectList(response.projects)
-    user.projects.reset(response.projects)
+    if(!this.projects){ 
+      this.projects = new app.collections.ProjectList();
+    };
+    this.projects.reset(response.projects)
     return response;
   },
-
-  // fetchProjects: function(){
-  //   if(this.id){
-  //     this.projects.fetch();
-  //     this.projects.reset(this.projects.where({ user_id: this.id }));
-  //   };
-  // },
 
   fullName: function(){
     return this.get('firstName') + " " + this.get('lastName');
@@ -56,7 +48,9 @@ app.models.User = Backbone.Model.extend({
       id: this.id,
       first_name: this.get('firstName'),
       last_name: this.get('lastName'),
-      etc: thing
+      bio: this.get('bio'),
+      mission: this.get('mission'),
+      image_url: this.get('imageUrl')
     };
   }
 

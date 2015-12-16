@@ -73,7 +73,7 @@ describe("User model", function() {
       var request = jasmine.Ajax.requests.mostRecent();
       expect(request.method).toBe("POST");
       expect(request.url).toBe("/users");
-      expect(request.data()).toEqual(adam.toJSON());
+      expect(request.data()).toEqual(adam.attributes);
 
       var responseFromApi = {
         status: 201,
@@ -141,7 +141,6 @@ describe("User model", function() {
 
       it("should retrieve the project associated with the user", function(){
         
-        debugger;
         var responseFromApi = {
           status: 201,
           responseText: JSON.stringify({
@@ -156,7 +155,6 @@ describe("User model", function() {
             })
         };
 
-        debugger;
         var reloadedUser = new app.models.User({ id: adam.id });
         reloadedUser.fetch();
 
@@ -178,7 +176,7 @@ describe("User model", function() {
       describe("projects nested in users", function(){
 
         it("should ", function(){
-          expect
+          
         });
   
       });

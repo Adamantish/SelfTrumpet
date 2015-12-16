@@ -15,7 +15,6 @@ camel_project = {}
   camel_project = {}             
 end
 
-binding.pry
 json.projects camel_projects
 
 

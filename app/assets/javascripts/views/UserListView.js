@@ -3,18 +3,17 @@ app.views.UserListView = Backbone.View.extend({
   id: 'user-list',
   tagName: 'ol',
 
-  template: JST['templates/users/index'],
-  // template: _.template($('#user-list-item-template').html()),
+  template: JST['templates/users/showThin'],
 
   events: {
     'click .user': 'show'
   },
 
+
   render: function(){
 
     var _this = this;
-    $("<h2>The Users</h2>").insertBefore(this.$el);
-
+    
     this.collection.each(function(user){
       _this.$el.append(_this.template({ user: user }));
     });

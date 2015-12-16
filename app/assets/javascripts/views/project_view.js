@@ -7,7 +7,7 @@ app.views.ProjectView = Backbone.View.extend({
   events: {  
     'dblclick .editable': 'toggleVisible',
     // 'blur .edit-me': 'updateElement',
-    'change .edit-me': 'updateElement'
+    'change .project__edit-me': 'updateElement'
   },
 
   initialize: function(){
@@ -20,16 +20,6 @@ app.views.ProjectView = Backbone.View.extend({
     return this;
   },
 
-  // editProjectName: function() {
-  //   this.$el.addClass('editing');
-  //   this.$el.find('.edit-title').show().focus().prev('h3').hide();
-  // },
-
-  // updateTitle: function(e) {
-  //   var new_title = $(e.currentTarget).val().trim();
-  //   this.model.set('title', new_title);
-  //   this.model.save();
-  // },
 
   removeProject: function(){
     
@@ -41,6 +31,7 @@ app.views.ProjectView = Backbone.View.extend({
   },
 
   updateElement: function(e){
+    debugger;
     var $el = $(e.currentTarget)
     var newVal = $el.val().trim();
     var field = $el.data("attributes")

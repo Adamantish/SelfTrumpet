@@ -7,4 +7,7 @@ $(document).ready(function() {
   
   usersController.navigate("users", { trigger : true });
 
+  // var dummyFollow = new app.models.Follow;
+
+  // dummyFollow.save();
 });

@@ -5,16 +5,17 @@ app.controllers.UsersController = Backbone.Router.extend({
     'users': 'index'
   },
 
+
   show: function(id){
 
     // model
     var user = new app.models.User({ id: id });
-    user.fetch({});
-
-    // view
-    var view = new app.views.UserView({ model: user })
-    $('#content').html(view.render().el)
-
+    user.fetch({
+      success: function() {
+        var view = new app.views.UserView({ model: user })
+        $('#content').html(view.render().el)
+      }
+    });
   },
 
   index: function(){
@@ -23,9 +24,11 @@ app.controllers.UsersController = Backbone.Router.extend({
     var users = new app.collections.UserList();
     users.fetch({
       success: function(users){
-        debugger;
+
         var userListView = new app.views.UserListView({ collection: users });
-        $('#content').html(userListView.render().el);
+        var $list = userListView.render().$el;
+        var pageTemplate = JST['templates/users/index'];
+        $('#content').html(pageTemplate({ list: $list.html() }));
       }
     });
 
