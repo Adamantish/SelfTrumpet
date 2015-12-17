@@ -55,8 +55,6 @@ RSpec.describe UsersController, type: :controller do
       expect(user_json['mission']).to eq("Mission")
       expect(user_json['imageUrl']).to eq("/uploads/me.jpg")
 
-      binding.pry
-
       expect(user_json['projects'].length).to eq(2)
       expect(user_json['projects'].first['title']).to eq("Demon Duck Hunt")
       expect(user_json['projects'].first['imageUrl']).to eq("thething.jpg")

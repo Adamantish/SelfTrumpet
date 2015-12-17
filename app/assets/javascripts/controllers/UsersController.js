@@ -21,19 +21,26 @@ app.controllers.UsersController = Backbone.Router.extend({
   index: function(){
 
     // Model    
+    
+    app.instancesCache.follows = new app.collections.Follows();
+    app.instancesCache.follows.fetch()
+    app.instancesCache.followers = new app.collections.Followers();
+    
     var users = new app.collections.UserList();
     users.fetch({
       success: function(users){
-
+        
         var userListView = new app.views.UserListView({ collection: users });
-        var $list = userListView.render().$el;
+        var followersView = new app.views.UserListView({ collection: app.instancesCache.followers});
+
+        var $users = userListView.render().$el;
+        var $followers = followersView.render().$el;
+
+        
         var pageTemplate = JST['templates/users/index'];
-        $('#content').html(pageTemplate({ list: $list.html() }));
+        $('#content').html(pageTemplate({ users: $users.html() , followers: $followers.html() }));
       }
     });
-
-
-    
   }
 
 });

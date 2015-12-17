@@ -7,5 +7,6 @@ var app = app || {
   models: {},
   views: {},
   collections: {},
-  controllers: {}
+  controllers: {},
+  instancesCache: {}
 };

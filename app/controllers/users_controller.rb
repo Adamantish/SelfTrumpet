@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def update
     
-    binding.pry
     user_hash = params["user"]
     id = user_hash["id"]
 

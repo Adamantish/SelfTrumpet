@@ -1,12 +1,11 @@
 
 app.models.Follow = Backbone.Model.extend({
 
-  defaults: {
-    // temporary default
-    followeeId: 2
-  },
 
-  url: "http://localhost:9292/users/1/follow",
+  url: function(){ 
+    var root = "http://localhost:9292/users/"
+    return root  + this.get('followeeId') + "/" + "follow"    
+  },
 
   toJSON: function() {
     return {

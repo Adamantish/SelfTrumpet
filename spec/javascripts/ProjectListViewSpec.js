@@ -50,7 +50,6 @@ describe("ProjectListView", function(){
 
   describe("add new project", function() {
     beforeEach(function () {
-      
       view.render().$el.find("#add-project").trigger("click");
     });
 
