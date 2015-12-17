@@ -40,7 +40,6 @@ app.controllers.UsersController = Backbone.Router.extend({
         var $users = userListView.render().$el;
         var $followers = followersView.render().$el;
 
-        
         var pageTemplate = JST['templates/users/index'];
         $('#content').html(pageTemplate({ users: $users.html() , followers: $followers.html() }));
       }

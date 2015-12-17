@@ -18,7 +18,7 @@ describe("FollowView", function(){
     });
 
     followModel = new app.models.Follow({ user: targetUser });
-    followView = new app.models.FollowView({ model: followModel });
+    followView = new app.views.FollowView({ model: followModel });
   })
 
   describe("When current user is NOT following the target user", function(){
@@ -26,7 +26,7 @@ describe("FollowView", function(){
     it("should display a follow button", function(){
 
       followView.render();
-      expect(followView.$el.find('#btn--follow').text()).toMatch(/Follow/)
+      expect(followView.$el.find('.btn--follow').text()).toMatch(/Follow/)
     });
 
   });
@@ -38,7 +38,7 @@ describe("FollowView", function(){
       followModel.set( "followeeId", targetUser.id )
       
       followView.render();
-      expect(followView.$el.find('#btn--unfollow').text()).toMatch(/Unfollow/)
+      expect(followView.$el.find('.btn--unfollow').text()).toMatch(/Unfollow/)
     });
   });
 });

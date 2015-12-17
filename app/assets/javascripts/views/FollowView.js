@@ -4,7 +4,9 @@ app.views.FollowView = Backbone.View.extend({
   template: JST['templates/follows/show'],
 
   render: function(){
-    this.$el.html(this.template(this.model));
+    debugger;
+    this.$el.html(this.template(this));
+    return this;
   }
 
 });

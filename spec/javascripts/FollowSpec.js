@@ -30,15 +30,15 @@ describe("Follow Model", function(){
     expect(newFollow.attributes.followerId).toBe(1);
   });
 
-  describe("getCalcAttribute", function(){
+  describe("calcAttribute", function(){
     it("can request a calculated attribute and return a value based on model state", function(){
-      expect(newFollow.getCalcAttribute("btnText")).toEqual("Follow")
-      expect(newFollow.getCalcAttribute("btnClass")).toEqual("btn--follow")
+      expect(newFollow.calcAttribute("btnText")).toEqual("Follow")
+      expect(newFollow.calcAttribute("btnClass")).toEqual("btn--follow")
 
       newFollow.set("followeeId",2)
 
-      expect(newFollow.getCalcAttribute("btnText")).toEqual("Unfollow")
-      expect(newFollow.getCalcAttribute("btnClass")).toEqual("btn--unfollow")
+      expect(newFollow.calcAttribute("btnText")).toEqual("Unfollow")
+      expect(newFollow.calcAttribute("btnClass")).toEqual("btn--unfollow")
 
     });
   });
