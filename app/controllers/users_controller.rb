@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    
     user_hash = params["user"]
     id = user_hash["id"]
 

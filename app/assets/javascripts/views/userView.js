@@ -9,7 +9,8 @@ app.views.UserView = Backbone.View.extend({
   events: {
     'dblclick .editable': 'toggleVisible',
     'blur .user__edit-me': 'updateElement',
-    'change .user__edit-me': 'updateElement'
+    'change .user__edit-me': 'updateElement',
+    'click #btn__follow': 'follow'
 
   },
 
@@ -40,6 +41,14 @@ app.views.UserView = Backbone.View.extend({
     var newVal = $(e.currentTarget).val().trim();
     this.model.set(field, $el.val().trim());
     this.model.save();
+  },
+
+  follow: function(){
+    var follow = new app.models.Follow({ followeeId: this.model.id })
+    follow.save({success: function(){
+      $('.btn__follow').text('Unfollow')
+      // TODO: change behaviour for unfollow.
+    }});
   }
 
 });

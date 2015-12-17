@@ -20,10 +20,14 @@ app.controllers.UsersController = Backbone.Router.extend({
 
   index: function(){
 
-    // Model    
+    // Model   
+
+     // TODO: work this into a new view
     
     app.instancesCache.follows = new app.collections.Follows();
     app.instancesCache.follows.fetch()
+    // Need to wait for this one ^ to finish before moving on. 
+    // Incidentally happens to work out ok most times but not all
     app.instancesCache.followers = new app.collections.Followers();
     
     var users = new app.collections.UserList();

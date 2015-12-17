@@ -19,6 +19,7 @@ describe("Follow Model", function(){
     var currentUser = 1
   });
 
+  // making this test helped me figure out the design but it won't pass until I work in ajax mocking.
   it("can follow a user with POST", function(){
 
     newFollow = new app.models.Follow();
