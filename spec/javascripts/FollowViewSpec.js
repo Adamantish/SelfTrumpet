@@ -35,7 +35,8 @@ describe("FollowView", function(){
 
     it("should display an unfollow button", function(){
 
-      followModel.set("followeeId")
+      followModel.set( "followeeId", targetUser.id )
+      
       followView.render();
       expect(followView.$el.find('#btn--unfollow').text()).toMatch(/Unfollow/)
     });

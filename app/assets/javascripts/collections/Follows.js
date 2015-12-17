@@ -4,7 +4,7 @@ app.collections.Follows = Backbone.Collection.extend({
   index: {},
 
   url: function(){ 
-    var currentUserId = app.instancesCache.currentUser.get("id")
+    var currentUserId = 1 // UUS|| app.instancesCache.currentUser.get("id")
     var root = "http://localhost:9292/users/"
     return root + currentUserId + "/" + "followers"    
   },

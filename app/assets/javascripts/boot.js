@@ -10,7 +10,7 @@ $(document).ready(function() {
   // temporary hardcode
 
   debugger;
-  app.instancesCache.currentUser = new app.models.User({ id: 1 })
+  app.instancesCache.currentUser = new app.models.User({ id: 2 })
   // this has exposed a problem in fetching single users
   app.instancesCache.currentUser.fetch();
 

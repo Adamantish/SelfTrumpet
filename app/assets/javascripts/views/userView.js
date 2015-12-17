@@ -44,10 +44,7 @@ app.views.UserView = Backbone.View.extend({
   },
 
   follow: function(){
-    // sidestepping backbone and pure REST here because it simplifies things, and follow model doesn't
-    // need to be kept locally.
 
-    
     var follow = new app.models.Follow({ followeeId: this.model.id })
     follow.save({success: function(){
       $('.btn--follow').text('Unfollow')
