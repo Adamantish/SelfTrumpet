@@ -1,9 +1,8 @@
 app.views.UserView = Backbone.View.extend({
 
   tagName: 'div',
-  className: "container__bio",
+  className: "container__bio user",
   id: "user",
-  class: "user",
   template: JST['templates/users/show'],
   // template: _.template($('#user-template').html()),
   events: {
