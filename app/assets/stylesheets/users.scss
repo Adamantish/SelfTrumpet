@@ -1,0 +1,16 @@
+li.user {
+    list-style: none;
+    /* border-color: grey; */
+    /* border-left: 4px; */
+    border: solid #CBC9C9 1px;
+    border-radius: 3px;
+    /* box-sizing: border-box; */
+    /* height: 8em; */
+    padding: 1em;
+}
+
+.user__image-thumb {
+    height: 50px;
+    width: 50px;
+    padding-right: 1em;
+}

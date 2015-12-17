@@ -50,6 +50,7 @@ describe("User View", function () {
     it("should display the user's mission", function(){
       expect(view.$el.find("h3").html()).toMatch(/LIDL/)
     });
+
   });
 
   describe("events", function(){

@@ -46,6 +46,10 @@ h1 * {
   display: inline-block;
 }
 
+#btn--github img {
+    height: 80px;
+}
+
 .bio {
   margin-bottom: 1em;
   font-size: 1.5rem;

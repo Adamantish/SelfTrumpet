@@ -10,7 +10,7 @@ app.views.UserView = Backbone.View.extend({
     'dblclick .editable': 'toggleVisible',
     'blur .user__edit-me': 'updateElement',
     'change .user__edit-me': 'updateElement',
-    'click #btn__follow': 'follow'
+    'click #btn--follow': 'follow'
 
   },
 
@@ -44,9 +44,13 @@ app.views.UserView = Backbone.View.extend({
   },
 
   follow: function(){
+    // sidestepping backbone and pure REST here because it simplifies things, and follow model doesn't
+    // need to be kept locally.
+
+    
     var follow = new app.models.Follow({ followeeId: this.model.id })
     follow.save({success: function(){
-      $('.btn__follow').text('Unfollow')
+      $('.btn--follow').text('Unfollow')
       // TODO: change behaviour for unfollow.
     }});
   }

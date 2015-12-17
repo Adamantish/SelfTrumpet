@@ -16,7 +16,7 @@ describe("Follow Model", function(){
   // });
 
   beforeEach(function(){
-    var currentUser = 1
+    var currentUserId = app.instancesCache.currentUser.get("id")
   });
 
   // making this test helped me figure out the design but it won't pass until I work in ajax mocking.
