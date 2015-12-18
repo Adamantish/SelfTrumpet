@@ -8,8 +8,10 @@ app.views.FollowView = Backbone.View.extend({
   },
 
   initialize: function(){
+    debugger;
+    var _this = this
     this.model.fetch({
-      success: this.render
+      success: function() {_this.render()}
     });
   },
 
@@ -28,8 +30,8 @@ app.views.FollowView = Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html(this.template({ model: this.model }));
     debugger;
+    this.$el.html(this.template({ model: this.model }));
     return this;
   }
 

@@ -3,6 +3,36 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   render_views
 
+  describe 'GET to /users/github_authorize' do
+    before do
+      binding.pry
+      get :github_authorize
+    end
+
+    it "redirects us to the github oauth server" do
+      expect(response.headers["Location"].start_with?("https://github.com/login/oauth/authorize")).to be true 
+      expect(response.headers["Location"]).to eq("https://github.com/login/oauth/authorize?client_id=45645dfgg645&redirect_uri=http%3A%2F%2Ftest.host%2Fusers%2Fgithub_oauth_callback&response_type=code")
+    end
+
+  end
+
+  describe "GET to /users/github_callback" do
+    before do
+      VCR.use_cassette('github_authorize') do
+        get :github_oauth_callback, code: "auth_token"
+      end
+    end
+
+    it "redirects us to the homepage" do
+      expect(response).to redirect_to root_path
+    end
+
+    it "creates a User" do
+      expect(User.count).to eq 4
+      expect(User.last.github_id).to_not be_nil
+    end
+  end
+
   before do 
     3.times { @last_user = User.create!(first_name: "Adam", last_name: "Misrahi", bio: "Bio", mission: "Mission", image_url: "/uploads/me.jpg")}
 

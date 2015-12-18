@@ -23,6 +23,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'jasmine'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

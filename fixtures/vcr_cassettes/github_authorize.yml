@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://github.com/login/oauth/access_token
+    body:
+      encoding: UTF-8
+      string: client_id=asdfadsfdsa&client_secret=asdfasdfasd&code=aa036ba20e309c08cb5f&grant_type=authorization_code
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 18 Dec 2015 10:26:31 GMT
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Accept-Encoding
+      - X-PJAX
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      X-Request-Id:
+      - dd927e9130c38458fcf561c09d270cb1
+      X-Runtime:
+      - '0.014233'
+      Content-Security-Policy:
+      - 'default-src *; base-uri ''self''; connect-src ''self'' live.github.com wss://live.github.com
+        uploads.github.com status.github.com api.github.com www.google-analytics.com
+        api.braintreegateway.com client-analytics.braintreegateway.com github-cloud.s3.amazonaws.com;
+        font-src assets-cdn.github.com; form-action ''self'' github.com gist.github.com;
+        frame-src ''self'' render.githubusercontent.com gist.github.com www.youtube.com
+        player.vimeo.com checkout.paypal.com; img-src ''self'' data: assets-cdn.github.com
+        identicons.github.com www.google-analytics.com checkout.paypal.com collector.githubapp.com
+        *.githubusercontent.com *.gravatar.com *.wp.com; media-src ''none''; object-src
+        assets-cdn.github.com; script-src assets-cdn.github.com; style-src ''self''
+        ''unsafe-inline'' ''unsafe-eval'' assets-cdn.github.com'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      Public-Key-Pins:
+      - max-age=300; pin-sha256="WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18="; pin-sha256="JbQbUG5JMJUoI6brnx0x3vZF6jilxsapbXGVfjhN8Fg=";
+        includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - d0e230454cb69aa01d4f86fc3a57b17f
+      X-Github-Request-Id:
+      - 569AA51D:35C6:32BF8E3:5673DF57
+    body:
+      encoding: UTF-8
+      string: access_token=ff140b925190be9662918b6c836909b3f2b809ad&scope=&token_type=bearer
+    http_version:
+  recorded_at: Fri, 18 Dec 2015 10:26:33 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Authorization:
+      - Bearer ff140b925190be9662918b6c836909b3f2b809ad
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 18 Dec 2015 10:26:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4998'
+      X-Ratelimit-Reset:
+      - '1450437981'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Last-Modified:
+      - Tue, 15 Dec 2015 18:50:02 GMT
+      Etag:
+      - W/"a35bc5fa69708b7c4c12f791b64f4b14"
+      X-Oauth-Scopes:
+      - ''
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 750cab7a4d8a0aa78a7c
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - a6882e5cd2513376cb9481dbcd83f3a2
+      X-Github-Request-Id:
+      - 569AA51D:1D260:E5D5A99:5673DF57
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"dmgarland","id":133712,"avatar_url":"https://avatars.githubusercontent.com/u/133712?v=3","gravatar_id":"","url":"https://api.github.com/users/dmgarland","html_url":"https://github.com/dmgarland","followers_url":"https://api.github.com/users/dmgarland/followers","following_url":"https://api.github.com/users/dmgarland/following{/other_user}","gists_url":"https://api.github.com/users/dmgarland/gists{/gist_id}","starred_url":"https://api.github.com/users/dmgarland/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/dmgarland/subscriptions","organizations_url":"https://api.github.com/users/dmgarland/orgs","repos_url":"https://api.github.com/users/dmgarland/repos","events_url":"https://api.github.com/users/dmgarland/events{/privacy}","received_events_url":"https://api.github.com/users/dmgarland/received_events","type":"User","site_admin":false,"name":"Dan
+        Garland","company":"We Got Coders","blog":"http://www.dangarland.co.uk","location":"London","email":"dan
+        at dan garland dot co dot uk","hireable":null,"bio":null,"public_repos":47,"public_gists":36,"followers":58,"following":75,"created_at":"2009-10-01T13:24:24Z","updated_at":"2015-12-15T18:50:02Z"}'
+    http_version:
+  recorded_at: Fri, 18 Dec 2015 10:26:33 GMT
+recorded_with: VCR 3.0.0

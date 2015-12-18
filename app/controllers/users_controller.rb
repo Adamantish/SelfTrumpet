@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def github_authorize
+    binding.pry
     redirect_to oauth2_client.auth_code.authorize_url(
       redirect_uri: github_oauth_callback_users_url
     )
