@@ -10,6 +10,7 @@ app.models.User = Backbone.Model.extend({
     this.projects.user = this;
     this.follow = new app.models.Follow();
     this.follow.user = this;
+    this.follow.fetch();
   },
 
   parse: function(response) {

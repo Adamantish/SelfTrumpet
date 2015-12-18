@@ -42,14 +42,14 @@ app.views.UserView = Backbone.View.extend({
     this.model.save();
   },
 
-  follow: function(){
+  // follow: function(){
 
-    var follow = new app.models.Follow({ followeeId: this.model.id })
-    follow.save({success: function(){
-      $('.btn--follow').text('Unfollow')
-      // TODO: change behaviour for unfollow.
-    }});
-  }
+  //   var follow = new app.models.Follow({ followeeId: this.model.id })
+  //   follow.save({success: function(){
+  //     $('.btn--follow').text('Unfollow')
+  //     // TODO: change behaviour for unfollow.
+  //   }});
+  // }
 
 });
 

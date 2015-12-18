@@ -28,7 +28,7 @@ app.models.Follow = Backbone.Model.extend({
                  }
     }
 
-    var state = this.get("followeeId") ? "foll" : "noFoll";
+    var state = this.get("followerId") ? "foll" : "noFoll";
 
     return valMap[attribute][state];
   },

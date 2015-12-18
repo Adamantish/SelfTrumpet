@@ -6,7 +6,7 @@ app.collections.Follows = Backbone.Collection.extend({
  url: function() { 
     var currentUser = 2
     var root = "http://localhost:9292/users/"
-    return root + currentUser + "/" + "follow"    
+    return root + currentUser + "/" + "followers"    
   },
 
   initialize: function() {

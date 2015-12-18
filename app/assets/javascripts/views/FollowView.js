@@ -14,14 +14,14 @@ app.views.FollowView = Backbone.View.extend({
   unfollow: function(){
     // destroy the saved one to send a delete request then recreate a fresh blank one
     var targetUser = this.model.user
-    this.model.destroy();
-
-    this.model = new app.models.Follow({ user: targetUser })
-    this.render();
+    this.model.destroy({success: function(){
+      this.model = new app.models.Follow({ user: targetUser })
+      this.render();
+      }
+    });
   },
 
   render: function(){
-    this.model.fetch();
     this.$el.html(this.template({ model: this.model }));
     return this;
   }
