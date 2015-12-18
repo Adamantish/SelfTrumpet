@@ -8,5 +8,6 @@ var app = app || {
   views: {},
   collections: {},
   controllers: {},
-  instancesCache: {}
+  instancesCache: {},
+  helpers: {}
 };

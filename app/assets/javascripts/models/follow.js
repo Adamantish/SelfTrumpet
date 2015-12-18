@@ -3,13 +3,13 @@ app.models.Follow = Backbone.Model.extend({
 
   initialize: function() {
     this.getFolloweeId();
-    // var _this = this
     this.on("change:user", this.getFolloweeId )
   },
 
-  url: function(){ 
+  url: function() { 
     var root = "http://localhost:9292/users/"
-    return root + this.get('followeeId') + "/" + "follow"    
+    debugger;
+    return root + this.user.id + "/" + "follow"    
   },
 
   getFolloweeId: function(){
@@ -19,7 +19,6 @@ app.models.Follow = Backbone.Model.extend({
   },
 
   calcAttribute: function(attribute) {
-    
     var valMap = {
       "btnClass": { "foll": "btn--unfollow",
                  "noFoll": "btn--follow"
@@ -32,7 +31,6 @@ app.models.Follow = Backbone.Model.extend({
     var state = this.get("followeeId") ? "foll" : "noFoll";
 
     return valMap[attribute][state];
-
   },
 
   toJSON: function() {

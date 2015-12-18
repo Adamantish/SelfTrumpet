@@ -20,12 +20,12 @@ app.views.UserView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model));
     Editable.makeInputBoxes(this)
-
-    var projectListView = new app.views.ProjectListView({
-      collection: this.model.projects
-    });
+    
+    var followView = new app.views.FollowView({ model: this.model.follow });
+    var projectListView = new app.views.ProjectListView({ collection: this.model.projects });
 
     this.$el.append(projectListView.render().el);
+    this.$el.find(".wdg--follow").html(followView.render().el)
     return this;
   },
 

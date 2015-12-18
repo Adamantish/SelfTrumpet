@@ -3,10 +3,10 @@ app.collections.Follows = Backbone.Collection.extend({
   model: app.models.Follow,
   index: {},
 
-  url: function(){ 
-    var currentUserId = 1 // UUS|| app.instancesCache.currentUser.get("id")
+ url: function() { 
+    var currentUser = 2
     var root = "http://localhost:9292/users/"
-    return root + currentUserId + "/" + "followers"    
+    return root + currentUser + "/" + "follow"    
   },
 
   initialize: function() {
@@ -14,7 +14,7 @@ app.collections.Follows = Backbone.Collection.extend({
   },
 
   addToIndex: function(follow) {
-    this.index[follow.id] = "here"
+    this.index[follow.id] = 1
   }
 
 });
