@@ -28,7 +28,7 @@ describe("FollowView", function(){
       followView.render();
       expect(followView.$el.find('.btn--follow').text()).toMatch(/Follow/)
     });
-
+2
   });
 
   describe("When current user is following the target user", function(){

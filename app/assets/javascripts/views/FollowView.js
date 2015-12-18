@@ -7,6 +7,12 @@ app.views.FollowView = Backbone.View.extend({
     "click .btn--unfollow": "unfollow"
   },
 
+  initialize: function(){
+    this.model.fetch({
+      success: this.render
+    });
+  },
+
   follow: function(){
     this.model.save({success: this.render });
   },
@@ -23,6 +29,7 @@ app.views.FollowView = Backbone.View.extend({
 
   render: function(){
     this.$el.html(this.template({ model: this.model }));
+    debugger;
     return this;
   }
 
