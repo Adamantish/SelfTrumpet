@@ -21,6 +21,9 @@ gem 'oauth2'
 
 group :development, :test do
   gem 'pry-byebug'
+end
+
+group  :test do
   gem 'rspec-rails'
   gem 'jasmine'
   gem 'vcr'

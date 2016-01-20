@@ -8,7 +8,6 @@ app.models.Follow = Backbone.Model.extend({
 
   url: function() { 
     var root = "http://localhost:9292/users/"
-    debugger;
     return root + this.user.id + "/" + "follow"    
   },
 
