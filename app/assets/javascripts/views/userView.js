@@ -67,14 +67,5 @@ app.views.UserView = Backbone.View.extend({
 
   },
 
-  // follow: function(){
-
-  //   var follow = new app.models.Follow({ followeeId: this.model.id })
-  //   follow.save({success: function(){
-  //     $('.btn--follow').text('Unfollow')
-  //     // TODO: change behaviour for unfollow.
-  //   }});
-  // }
-
 });
 
