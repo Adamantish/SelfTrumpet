@@ -9,9 +9,7 @@ app.views.UserListView = Backbone.View.extend({
     'click .user': 'show'
   },
 
-
   render: function(){
-
     var _this = this;
     
     this.collection.each(function(user){

@@ -1,5 +1,6 @@
 <img src=<%= get('imageUrl') || "/assets/images/yourface.png" %> width="200" height="200" alt="<%= get('firstName') %>"
-data-attributes='imageUrl' class="imageUrl bio-image shadowed editable" />
+data-attributes='imageUrl' class="imageUrl bio-image shadowed uploadable" />
+<input type="file" name="imageFile" class="file-input user[image] hidden-edit"></input>
 
 <div class="bio-text">
   <h1>

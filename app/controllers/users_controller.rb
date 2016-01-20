@@ -38,10 +38,15 @@ class UsersController < ApplicationController
   end
 
   def update
+
+    binding.pry
+    
     user_hash = params["user"]
     id = user_hash["id"]
 
-    User.update(id, strong_params)
+    user = User.find(id)
+    params[:file].original_filename
+    user.update(strong_params)
 
     render nothing: true
   end
